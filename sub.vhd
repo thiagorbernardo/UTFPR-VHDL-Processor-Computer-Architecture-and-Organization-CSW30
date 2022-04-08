@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity sub is
     port(
         x, y: in unsigned(15 downto 0);
-        output: out std_logic
+        output: out unsigned(15 downto 0)
     );
 end entity;
 

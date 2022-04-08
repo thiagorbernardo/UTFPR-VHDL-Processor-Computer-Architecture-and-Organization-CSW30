@@ -9,13 +9,13 @@ architecture greater_or_equal_tb of greater_or_equal_tb is
     component greater_or_equal is
         port
         (
-            x: in unsigned(7 downto 0);
-            y: in unsigned(7 downto 0);
-            output: out std_logic
+            x: in unsigned(15 downto 0);
+            y: in unsigned(15 downto 0);
+            output: out unsigned(15 downto 0)
         );
     end component;
-    signal x, y: unsigned(7 downto 0);
-    signal output: std_logic;
+    signal x, y: unsigned(15 downto 0);
+    signal output: unsigned(15 downto 0);
 
 begin
     uut: greater_or_equal
@@ -28,11 +28,11 @@ begin
 
     process
     begin
-        x <= "00000001";
-        y <= "01000000";
+        x <= "0000000010000000";
+        y <= "1000000000000001";
         wait for 50 ns;
-        x <= "11111111";
-        y <= "00000010";
+        x <= "0000000011111111";
+        y <= "0000000000000010";
         wait for 50 ns;
         wait;
     end process;
