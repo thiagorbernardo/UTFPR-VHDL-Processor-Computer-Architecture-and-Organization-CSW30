@@ -1,0 +1,24 @@
+﻿<Project>
+  <ItemGroup>
+    <File Include="Generated/processador.vhd" />
+    <File Include="alu.vhd" />
+    <File Include="and_op.vhd" />
+    <File Include="greater_or_equal.vhd" />
+    <File Include="greater_or_equal_tb.vhd" />
+    <File Include="is_odd.vhd" />
+    <File Include="mux4x1.vhd" />
+    <File Include="mux8x1.vhd" />
+    <File Include="mux8x1_tb.vcd" />
+    <File Include="mux8x1_tb.vhd" />
+    <File Include="processador.vhdp" />
+    <File Include="sub.vhd" />
+    <File Include="sum.vhd" />
+    <File Include="sum_and_sub.vhd" />
+    <File Include="sum_and_sub_tb.vcd" />
+    <File Include="sum_and_sub_tb.vhd" />
+    <File Include="xor_op.vhd" />
+  </ItemGroup>
+  <PropertyGroup>
+    <HardwareStartPath>mux8x1.vhd</HardwareStartPath>
+  </PropertyGroup>
+</Project>
