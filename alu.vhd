@@ -8,48 +8,29 @@ entity alu is
         select_op: in unsigned(2 downto 0);
         output: out unsigned(15 downto 0)
     );
-    variable sum_out, sub_out, and_out, xor_out, or_out, gte_out, is_odd_out, not_out: unsigned(15 downto 0);
+    signal is_odd, gte: unsigned(15 downto 0);
 end entity;
 
 architecture a_alu of alu is
 begin
-    sum_ezx: sum
-    port map
-    (
-        x      => x,
-        y      => y,
-        output => sum_out
-    );
+    is_odd <=
+    "0000000000000001" when x(0) = '1' else
+    "0000000000000000" when x(0) = '0' else
+    "0000000000000000";
     
-    sub: sub
-    port map
-    (
-        x      => x,
-        y      => y,
-        output => sub_out
-    );
+    gte <=
+    "0000000000000001" when x >= y else
+    "0000000000000000" when x < y else
+    "0000000000000000";
     
-    and_op: and_op
-    port map
-    (
-        x      => x,
-        y      => y,
-        output => and_out
-    );
-    
-    xor_op: xor_op
-    port map
-    (
-        x      => x,
-        y      => y,
-        output => xor_out
-    );
-
-    greater_or_equal: greater_or_equal
-    port map
-    (
-        x      => x,
-        y      => y,
-        output => greater_or_equal
-    );
+    output <=
+    x+y when select_op="000" else
+    x-y when select_op="001" else
+    x AND y when select_op="010" else
+    x XOR y when select_op="011" else
+    NOT x when select_op="100" else
+    x OR y when select_op="101" else
+    is_odd when select_op="110" else
+    gte when select_op="111" else
+    "0000000000000000";
 end architecture;

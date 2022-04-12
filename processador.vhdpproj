@@ -2,6 +2,7 @@
   <ItemGroup>
     <File Include="Generated/processador.vhd" />
     <File Include="alu.vhd" />
+    <File Include="alu_tb.vhd" />
     <File Include="and_op.vhd" />
     <File Include="and_op_tb.vcd" />
     <File Include="and_op_tb.vhd" />
@@ -17,6 +18,7 @@
     <File Include="mux8x1_tb.vhd" />
     <File Include="not_op.vhd" />
     <File Include="not_op_tb.vhd" />
+    <File Include="or_op.vhd" />
     <File Include="processador.vhd" />
     <File Include="processador.vhdp" />
     <File Include="sub.vhd" />
@@ -33,6 +35,6 @@
     <File Include="xor_op_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>is_odd.vhd</HardwareStartPath>
+    <HardwareStartPath>alu.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>
