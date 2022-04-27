@@ -1,10 +1,10 @@
 v 4
-file . "reg16bits_tb.vhd" "c044e2dfe9a4cb5a5318f8e7ecbd36bccb543dcf" "20220414200151.843":
-  entity reg16bits_tb at 1( 0) + 0 on 79;
-  architecture a_reg16bits_tb of reg16bits_tb at 8( 99) + 0 on 80;
-file . "reg16bits.vhd" "b116d4f703134f8e2446ba2be12730adbbed36ce" "20220414200151.838":
-  entity reg16bits at 1( 0) + 0 on 77;
-  architecture a_reg16bits of reg16bits at 15( 295) + 0 on 78;
+file . "reg16bits_tb.vhd" "66ecab46206f0890aa3f1efb8db0c15463e284ec" "20220427005057.886":
+  entity reg16bits_tb at 1( 0) + 0 on 83;
+  architecture a_reg16bits_tb of reg16bits_tb at 8( 99) + 0 on 84;
+file . "reg16bits.vhd" "b116d4f703134f8e2446ba2be12730adbbed36ce" "20220427005046.187":
+  entity reg16bits at 1( 0) + 0 on 81;
+  architecture a_reg16bits of reg16bits at 15( 295) + 0 on 82;
 file . "alu_tb.vhd" "b890361da2e4d69eb74d023494052fc8c5dd48c9" "20220409205426.556":
   entity alu_tb at 1( 0) + 0 on 73;
   architecture a_alu_tb of alu_tb at 8( 93) + 0 on 74;

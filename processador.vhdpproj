@@ -5,6 +5,8 @@
     <File Include="alu_tb.vhd" />
     <File Include="processador.vhd" />
     <File Include="processador.vhdp" />
+    <File Include="processor.vhd" />
+    <File Include="processor_tb.vhd" />
     <File Include="reg16bits.vhd" />
     <File Include="reg16bits_tb.vcd" />
     <File Include="reg16bits_tb.vhd" />
