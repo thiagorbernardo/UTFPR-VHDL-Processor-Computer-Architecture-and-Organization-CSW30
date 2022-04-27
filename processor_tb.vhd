@@ -63,19 +63,77 @@ begin
     
     clk_proc: process
     begin
-        while finished /= '1' loop 
+        while finished /= '1' loop
             clk <= '0';
             wait for period_time / 2;
             clk <= '1';
-            wait for period_time / 2; 
+            wait for period_time / 2;
         end loop;
         wait;
     end process clk_proc;
     
     testbench: process
-begin
-    
-    wait;
-end process testbench;
+    begin
+        
+        wr_en <= '1';
+        sel_in1_alu <= '1';
+        select_reg_a <= "000";
+        select_reg_b <= "000";
+        select_op <= "000";
+        
+        select_reg_write <= "001";
+        ext_in <= "0000000000000001";
+        wait for period_time;
+        
+        select_reg_write <= "010";
+        ext_in <= "0000000000000010";
+        wait for period_time;
+
+        select_reg_write <= "011";
+        ext_in <= "0000000000000100";
+        wait for period_time;
+        
+        select_reg_write <= "100";
+        ext_in <= "0000000000001000";
+        wait for period_time;
+        
+        select_reg_write <= "101";
+        ext_in <= "0000000000010000";
+        wait for period_time;
+        
+        select_reg_write <= "110";
+        ext_in <= "0000000000100000";
+        wait for period_time;
+        
+        select_reg_write <= "111";
+        ext_in <= "0000000000000001";
+        wait for period_time;
+        
+        select_reg_write <= "001";
+        ext_in <= "0000000000000001";
+        wait for period_time;
+        
+        sel_in1_alu <= '0';
+        wr_en <= '0';
+        select_reg_write <= "001";
+        select_reg_a <= "111";
+        select_reg_b <= "100";
+        select_op <= "001";
+        wait for period_time;
+        
+        sel_in1_alu <= '0';
+        wr_en <= '1';
+        select_reg_write <= "010";
+        select_reg_a <= "111";
+        select_reg_b <= "100";
+        select_op <= "001";
+        wait for period_time;
+        
+        wr_en <= '0';
+        select_reg_a <= "101";
+        select_reg_b <= "101";
+        
+        wait;
+    end process testbench;
 
 end architecture a_processor_tb;
