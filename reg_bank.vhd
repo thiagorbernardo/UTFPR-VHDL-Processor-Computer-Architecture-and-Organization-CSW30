@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity reg_bank is
     port(
         clk, rst, wr_en : in std_logic;
-        select_reg_a, select_reg_b, select_write_reg : in unsigned(15 downto 0);
+        select_reg_a, select_reg_b, select_write_reg : in unsigned(2 downto 0);
         write_data: in unsigned(15 downto 0);
         reg_a, reg_b : out unsigned(15 downto 0)
     );
@@ -35,15 +35,16 @@ begin
     reg7: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_7, data_in => write_data, data_out => data_out_reg_7);
     reg8: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_7, data_in => write_data, data_out => data_out_reg_8);
    
-    wr_en_1 <= wr_en when select_write_reg = "001" else '0';
-    wr_en_2 <= wr_en when select_write_reg = "010" else '0';
-    wr_en_3 <= wr_en when select_write_reg = "011" else '0';
-    wr_en_4 <= wr_en when select_write_reg = "100" else '0';
-    wr_en_5 <= wr_en when select_write_reg = "101" else '0';
-    wr_en_6 <= wr_en when select_write_reg = "110" else '0';
-    wr_en_7 <= wr_en when select_write_reg = "111" else '0';
+    wr_en_1 <= wr_en when select_write_reg = "000" else '0';
+    wr_en_2 <= wr_en when select_write_reg = "001" else '0';
+    wr_en_3 <= wr_en when select_write_reg = "010" else '0';
+    wr_en_4 <= wr_en when select_write_reg = "011" else '0';
+    wr_en_5 <= wr_en when select_write_reg = "100" else '0';
+    wr_en_6 <= wr_en when select_write_reg = "101" else '0';
+    wr_en_7 <= wr_en when select_write_reg = "110" else '0';
+    wr_en_8 <= wr_en when select_write_reg = "111" else '0';
   
-    regA <= data_out_reg_1 when select_reg_a = "000" else 
+    reg_a <= data_out_reg_1 when select_reg_a = "000" else 
       data_out_reg_2 when select_reg_a = "001" else 
       data_out_reg_3 when select_reg_a = "010" else 
       data_out_reg_4 when select_reg_a = "011" else 
@@ -53,7 +54,7 @@ begin
       data_out_reg_8 when select_reg_a = "111" else 
       "0000000000000000";
   
-    regB <= data_out_reg_1 when select_reg_b = "000" else 
+    reg_b <= data_out_reg_1 when select_reg_b = "000" else 
       data_out_reg_2 when select_reg_b = "001" else 
       data_out_reg_3 when select_reg_b = "010" else 
       data_out_reg_4 when select_reg_b = "011" else 
