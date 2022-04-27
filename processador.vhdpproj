@@ -3,38 +3,13 @@
     <File Include="Generated/processador.vhd" />
     <File Include="alu.vhd" />
     <File Include="alu_tb.vhd" />
-    <File Include="and_op.vhd" />
-    <File Include="and_op_tb.vcd" />
-    <File Include="and_op_tb.vhd" />
-    <File Include="greater_or_equal.vhd" />
-    <File Include="greater_or_equal_tb.vcd" />
-    <File Include="greater_or_equal_tb.vhd" />
-    <File Include="is_odd.vhd" />
-    <File Include="is_odd_tb.vcd" />
-    <File Include="is_odd_tb.vhd" />
-    <File Include="mux4x1.vhd" />
-    <File Include="mux8x1.vhd" />
-    <File Include="mux8x1_tb.vcd" />
-    <File Include="mux8x1_tb.vhd" />
-    <File Include="not_op.vhd" />
-    <File Include="not_op_tb.vhd" />
-    <File Include="or_op.vhd" />
     <File Include="processador.vhd" />
     <File Include="processador.vhdp" />
-    <File Include="sub.vhd" />
-    <File Include="sub_tb.vcd" />
-    <File Include="sub_tb.vhd" />
-    <File Include="sum.vhd" />
-    <File Include="sum_and_sub.vhd" />
-    <File Include="sum_and_sub_tb.vcd" />
-    <File Include="sum_and_sub_tb.vhd" />
-    <File Include="sum_tb.vcd" />
-    <File Include="sum_tb.vhd" />
-    <File Include="xor_op.vhd" />
-    <File Include="xor_op_tb.vcd" />
-    <File Include="xor_op_tb.vhd" />
+    <File Include="reg16bits.vhd" />
+    <File Include="reg16bits_tb.vcd" />
+    <File Include="reg16bits_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>alu.vhd</HardwareStartPath>
+    <HardwareStartPath>reg16bits.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>
