@@ -11,9 +11,10 @@
     <File Include="reg16bits_tb.vcd" />
     <File Include="reg16bits_tb.vhd" />
     <File Include="reg_bank.vhd" />
+    <File Include="reg_bank_tb.vcd" />
     <File Include="reg_bank_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>reg16bits.vhd</HardwareStartPath>
+    <HardwareStartPath>reg_bank.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>

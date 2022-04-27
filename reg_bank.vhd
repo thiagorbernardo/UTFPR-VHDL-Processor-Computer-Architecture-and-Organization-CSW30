@@ -26,13 +26,76 @@ architecture a_reg_bank of reg_bank is
     signal wr_en_1, wr_en_2, wr_en_3, wr_en_4, wr_en_5, wr_en_6, wr_en_7, wr_en_8 : std_logic;
     signal data_out_reg_1, data_out_reg_2, data_out_reg_3, data_out_reg_4, data_out_reg_5, data_out_reg_6, data_out_reg_7, data_out_reg_8: unsigned(15 downto 0);
 begin
-    reg1: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_1, data_in => write_data, data_out => data_out_reg_1);
-    reg2: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_2, data_in => write_data, data_out => data_out_reg_2);
-    reg3: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_3, data_in => write_data, data_out => data_out_reg_3);
-    reg4: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_4, data_in => write_data, data_out => data_out_reg_4);
-    reg5: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_5, data_in => write_data, data_out => data_out_reg_5);
-    reg6: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_6, data_in => write_data, data_out => data_out_reg_6);
-    reg7: reg16bits port map(clk => clk, rst => rst, wr_en => wr_en_7, data_in => write_data, data_out => data_out_reg_7);
+   reg1: reg16bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_1,
+        data_in  => write_data,
+        data_out => data_out_reg_1
+    );
+
+    reg2: reg16bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_2,
+        data_in  => write_data,
+        data_out => data_out_reg_2
+    );
+
+    reg3: reg16bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_3,
+        data_in  => write_data,
+        data_out => data_out_reg_3
+    );
+
+    reg4: reg16bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_4,
+        data_in  => write_data,
+        data_out => data_out_reg_4
+    );
+
+    reg5: reg16bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_5,
+        data_in  => write_data,
+        data_out => data_out_reg_5
+    );
+
+    reg6: reg16bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_6,
+        data_in  => write_data,
+        data_out => data_out_reg_6
+    );
+
+    reg7: reg16bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_7,
+        data_in  => write_data,
+        data_out => data_out_reg_7
+    );
+
    
     wr_en_1 <= wr_en when select_write_reg = "001" else '0';
     wr_en_2 <= wr_en when select_write_reg = "010" else '0';

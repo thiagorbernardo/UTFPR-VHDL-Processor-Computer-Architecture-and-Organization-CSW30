@@ -86,6 +86,54 @@ begin
         select_reg_b <= "100";
         select_write_reg <= "010";
         wait for period_time*2;
+
+        wr_en <= '1'; -- ativando o write enable
+        write_data <= "0000000000000001"; -- dado que supostamente seria escrito no registrador A (0), porém é o zero
+        select_reg_a <= "000";
+        select_reg_b <= "111";
+        select_write_reg <= "000";
+        wait for period_time*2;
+
+        -- testando todos os registradores
+
+        wr_en <= '1'; -- ativando o write enable
+        select_reg_b <= "111";
+
+        write_data <= "0000000000000001";
+        select_reg_a <= "001";
+        select_write_reg <= "001";
+        wait for period_time*3;
+
+        write_data <= "0000000000000010";
+        select_reg_a <= "010";
+        select_write_reg <= "010";
+        wait for period_time*3;
+
+        write_data <= "0000000000000100";
+        select_reg_a <= "011";
+        select_write_reg <= "011";
+        wait for period_time*3;
+
+        write_data <= "0000000000001000";
+        select_reg_a <= "100";
+        select_write_reg <= "100";
+        wait for period_time*3;
+
+        write_data <= "0000000000010000";
+        select_reg_a <= "101";
+        select_write_reg <= "101";
+        wait for period_time*3;
+
+        write_data <= "0000000000100000";
+        select_reg_a <= "110";
+        select_write_reg <= "110";
+        wait for period_time*3;
+
+        write_data <= "0000000001000000";
+        select_reg_a <= "111";
+        select_reg_b <= "000";
+        select_write_reg <= "111";
+        wait for period_time*3;
         wait;
     end process;
     
