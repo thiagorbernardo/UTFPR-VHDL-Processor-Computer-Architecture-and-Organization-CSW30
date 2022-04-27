@@ -24,8 +24,8 @@ architecture a_processor_tb of processor_tb is
     end component processor;
     
     constant period_time : time := 100 ns;
-    signal finished : std_logic := '0'; 
-    signal clk, rst, wr_en : std_logic; 
+    signal finished : std_logic := '0';
+    signal clk, rst, wr_en : std_logic;
     signal sel_in1_alu, select_reg_write, select_reg_a, select_reg_b, select_op : unsigned (2 downto 0);
     signal ext_in, output : unsigned(15 downto 0);
     
@@ -46,5 +46,36 @@ begin
         output           => output
     );
 
+    reset_global: process
+    begin
+        rst <= '1';
+        wait for period_time*2;
+        rst <= '0';
+        wait;
+    end process;
+    
+    sim_time_proc: process
+    begin
+        wait for 10 us;
+        finished <= '1';
+        wait;
+    end process sim_time_proc;
+    
+    clk_proc: process
+    begin
+        while finished /= '1' loop 
+            clk <= '0';
+            wait for period_time / 2;
+            clk <= '1';
+            wait for period_time / 2; 
+        end loop;
+        wait;
+    end process clk_proc;
+    
+    testbench: process
+begin
+    
+    wait;
+end process testbench;
 
-end architecture rtl;
+end architecture a_processor_tb;
