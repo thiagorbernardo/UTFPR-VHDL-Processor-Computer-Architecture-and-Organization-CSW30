@@ -25,8 +25,8 @@ architecture a_processor_tb of processor_tb is
     
     constant period_time : time := 100 ns;
     signal finished : std_logic := '0';
-    signal clk, rst, wr_en : std_logic;
-    signal sel_in1_alu, select_reg_write, select_reg_a, select_reg_b, select_op : unsigned (2 downto 0);
+    signal clk, rst, wr_en, sel_in1_alu : std_logic;
+    signal select_reg_write, select_reg_a, select_reg_b, select_op : unsigned (2 downto 0);
     signal ext_in, output : unsigned(15 downto 0);
     
     
@@ -52,16 +52,16 @@ begin
         wait for period_time*2;
         rst <= '0';
         wait;
-    end process;
+    end process reset_global;
     
-    sim_time_proc: process
+    sim_time_process: process
     begin
         wait for 10 us;
         finished <= '1';
         wait;
-    end process sim_time_proc;
+    end process sim_time_process;
     
-    clk_proc: process
+    clk_process: process
     begin
         while finished /= '1' loop
             clk <= '0';
@@ -70,9 +70,9 @@ begin
             wait for period_time / 2;
         end loop;
         wait;
-    end process clk_proc;
+    end process clk_process;
     
-    testbench: process
+    process
     begin
         
         wr_en <= '1';
@@ -123,9 +123,9 @@ begin
         
         sel_in1_alu <= '0';
         wr_en <= '1';
-        select_reg_write <= "010";
+        select_reg_write <= "101";
         select_reg_a <= "111";
-        select_reg_b <= "100";
+        select_reg_b <= "011";
         select_op <= "001";
         wait for period_time;
         
@@ -134,6 +134,6 @@ begin
         select_reg_b <= "101";
         
         wait;
-    end process testbench;
+    end process;
 
 end architecture a_processor_tb;

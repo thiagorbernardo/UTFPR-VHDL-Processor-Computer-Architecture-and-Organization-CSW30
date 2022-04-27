@@ -1,0 +1,213 @@
+$date
+  Wed Apr 27 19:52:23 2022
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module processor $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 1 # wr_en $end
+$var reg 1 $ sel_in1_alu $end
+$var reg 3 % select_reg_write[2:0] $end
+$var reg 3 & select_reg_a[2:0] $end
+$var reg 3 ' select_reg_b[2:0] $end
+$var reg 3 ( select_op[2:0] $end
+$var reg 16 ) ext_in[15:0] $end
+$var reg 16 * output[15:0] $end
+$var reg 16 + in0_alu[15:0] $end
+$var reg 16 , in1_alu[15:0] $end
+$var reg 16 - out_alu[15:0] $end
+$var reg 16 . reg_b[15:0] $end
+$scope module alu_instance $end
+$var reg 16 / x[15:0] $end
+$var reg 16 0 y[15:0] $end
+$var reg 3 1 select_op[2:0] $end
+$var reg 16 2 output[15:0] $end
+$var reg 16 3 is_odd[15:0] $end
+$var reg 16 4 gte[15:0] $end
+$upscope $end
+$scope module regs $end
+$var reg 1 5 clk $end
+$var reg 1 6 rst $end
+$var reg 1 7 wr_en $end
+$var reg 3 8 select_reg_a[2:0] $end
+$var reg 3 9 select_reg_b[2:0] $end
+$var reg 3 : select_write_reg[2:0] $end
+$var reg 16 ; write_data[15:0] $end
+$var reg 16 < reg_a[15:0] $end
+$var reg 16 = reg_b[15:0] $end
+$var reg 1 > wr_en_1 $end
+$var reg 1 ? wr_en_2 $end
+$var reg 1 @ wr_en_3 $end
+$var reg 1 A wr_en_4 $end
+$var reg 1 B wr_en_5 $end
+$var reg 1 C wr_en_6 $end
+$var reg 1 D wr_en_7 $end
+$var reg 1 E wr_en_8 $end
+$var reg 16 F data_out_reg_1[15:0] $end
+$var reg 16 G data_out_reg_2[15:0] $end
+$var reg 16 H data_out_reg_3[15:0] $end
+$var reg 16 I data_out_reg_4[15:0] $end
+$var reg 16 J data_out_reg_5[15:0] $end
+$var reg 16 K data_out_reg_6[15:0] $end
+$var reg 16 L data_out_reg_7[15:0] $end
+$var reg 16 M data_out_reg_8[15:0] $end
+$scope module reg1 $end
+$var reg 1 N clk $end
+$var reg 1 O rst $end
+$var reg 1 P wr_en $end
+$var reg 16 Q data_in[15:0] $end
+$var reg 16 R data_out[15:0] $end
+$var reg 16 S reg[15:0] $end
+$upscope $end
+$scope module reg2 $end
+$var reg 1 T clk $end
+$var reg 1 U rst $end
+$var reg 1 V wr_en $end
+$var reg 16 W data_in[15:0] $end
+$var reg 16 X data_out[15:0] $end
+$var reg 16 Y reg[15:0] $end
+$upscope $end
+$scope module reg3 $end
+$var reg 1 Z clk $end
+$var reg 1 [ rst $end
+$var reg 1 \ wr_en $end
+$var reg 16 ] data_in[15:0] $end
+$var reg 16 ^ data_out[15:0] $end
+$var reg 16 _ reg[15:0] $end
+$upscope $end
+$scope module reg4 $end
+$var reg 1 ` clk $end
+$var reg 1 a rst $end
+$var reg 1 b wr_en $end
+$var reg 16 c data_in[15:0] $end
+$var reg 16 d data_out[15:0] $end
+$var reg 16 e reg[15:0] $end
+$upscope $end
+$scope module reg5 $end
+$var reg 1 f clk $end
+$var reg 1 g rst $end
+$var reg 1 h wr_en $end
+$var reg 16 i data_in[15:0] $end
+$var reg 16 j data_out[15:0] $end
+$var reg 16 k reg[15:0] $end
+$upscope $end
+$scope module reg6 $end
+$var reg 1 l clk $end
+$var reg 1 m rst $end
+$var reg 1 n wr_en $end
+$var reg 16 o data_in[15:0] $end
+$var reg 16 p data_out[15:0] $end
+$var reg 16 q reg[15:0] $end
+$upscope $end
+$scope module reg7 $end
+$var reg 1 r clk $end
+$var reg 1 s rst $end
+$var reg 1 t wr_en $end
+$var reg 16 u data_in[15:0] $end
+$var reg 16 v data_out[15:0] $end
+$var reg 16 w reg[15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+U!
+U"
+U#
+U$
+bUUU %
+bUUU &
+bUUU '
+bUUU (
+bUUUUUUUUUUUUUUUU )
+b0000000000000000 *
+b0000000000000000 +
+b0000000000000000 ,
+b0000000000000000 -
+b0000000000000000 .
+b0000000000000000 /
+b0000000000000000 0
+bUUU 1
+b0000000000000000 2
+b0000000000000000 3
+b0000000000000001 4
+U5
+U6
+U7
+bUUU 8
+bUUU 9
+bUUU :
+b0000000000000000 ;
+b0000000000000000 <
+b0000000000000000 =
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+UE
+bUUUUUUUUUUUUUUUU F
+bUUUUUUUUUUUUUUUU G
+bUUUUUUUUUUUUUUUU H
+bUUUUUUUUUUUUUUUU I
+bUUUUUUUUUUUUUUUU J
+bUUUUUUUUUUUUUUUU K
+bUUUUUUUUUUUUUUUU L
+bUUUUUUUUUUUUUUUU M
+UN
+UO
+0P
+b0000000000000000 Q
+bUUUUUUUUUUUUUUUU R
+bUUUUUUUUUUUUUUUU S
+UT
+UU
+0V
+b0000000000000000 W
+bUUUUUUUUUUUUUUUU X
+bUUUUUUUUUUUUUUUU Y
+UZ
+U[
+0\
+b0000000000000000 ]
+bUUUUUUUUUUUUUUUU ^
+bUUUUUUUUUUUUUUUU _
+U`
+Ua
+0b
+b0000000000000000 c
+bUUUUUUUUUUUUUUUU d
+bUUUUUUUUUUUUUUUU e
+Uf
+Ug
+0h
+b0000000000000000 i
+bUUUUUUUUUUUUUUUU j
+bUUUUUUUUUUUUUUUU k
+Ul
+Um
+0n
+b0000000000000000 o
+bUUUUUUUUUUUUUUUU p
+bUUUUUUUUUUUUUUUU q
+Ur
+Us
+0t
+b0000000000000000 u
+bUUUUUUUUUUUUUUUU v
+bUUUUUUUUUUUUUUUU w
