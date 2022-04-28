@@ -3,10 +3,9 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity processor_tb is
-end entity processor_tb;
+end;
 
 architecture a_processor_tb of processor_tb is
-
     component processor is
         port
         (
@@ -21,14 +20,14 @@ architecture a_processor_tb of processor_tb is
             ext_in           : IN unsigned (15 downto 0);
             output           : OUT unsigned (15 downto 0)
         );
-    end component processor;
+    end component;
     
     constant period_time : time := 100 ns;
     signal finished : std_logic := '0';
+    
     signal clk, rst, wr_en, sel_in1_alu : std_logic;
     signal select_reg_write, select_reg_a, select_reg_b, select_op : unsigned (2 downto 0);
     signal ext_in, output : unsigned(15 downto 0);
-    
     
 begin
     uut : processor
@@ -54,14 +53,14 @@ begin
         wait;
     end process reset_global;
     
-    sim_time_process: process
+    sim_time_proc: process
     begin
-        wait for 10 us;
+        wait for 100 us;
         finished <= '1';
         wait;
-    end process sim_time_process;
+    end process sim_time_proc;
     
-    clk_process: process
+    clk_proc: process
     begin
         while finished /= '1' loop
             clk <= '0';
@@ -70,11 +69,10 @@ begin
             wait for period_time / 2;
         end loop;
         wait;
-    end process clk_process;
+    end process clk_proc;
     
     process
     begin
-        
         wr_en <= '1';
         sel_in1_alu <= '1';
         select_reg_a <= "000";
@@ -83,56 +81,52 @@ begin
         
         select_reg_write <= "001";
         ext_in <= "0000000000000001";
-        wait for period_time;
+        wait for period_time*3;
         
         select_reg_write <= "010";
         ext_in <= "0000000000000010";
-        wait for period_time;
+        wait for period_time*2;
 
         select_reg_write <= "011";
         ext_in <= "0000000000000100";
-        wait for period_time;
+        wait for period_time*2;
         
         select_reg_write <= "100";
         ext_in <= "0000000000001000";
-        wait for period_time;
+        wait for period_time*2;
         
         select_reg_write <= "101";
         ext_in <= "0000000000010000";
-        wait for period_time;
+        wait for period_time*2;
         
         select_reg_write <= "110";
         ext_in <= "0000000000100000";
-        wait for period_time;
+        wait for period_time*2;
         
         select_reg_write <= "111";
         ext_in <= "0000000000000001";
-        wait for period_time;
+        wait for period_time*2;
         
-        select_reg_write <= "001";
-        ext_in <= "0000000000000001";
-        wait for period_time;
-        
-        sel_in1_alu <= '0';
+        sel_in1_alu <= '0'; -- soma reg a com reg b, porém write enable desativado
         wr_en <= '0';
         select_reg_write <= "001";
         select_reg_a <= "111";
         select_reg_b <= "100";
         select_op <= "001";
-        wait for period_time;
+        wait for period_time*2;
         
-        sel_in1_alu <= '0';
+        sel_in1_alu <= '0'; -- soma reg a com reg b e salva no 101
         wr_en <= '1';
         select_reg_write <= "101";
         select_reg_a <= "111";
         select_reg_b <= "011";
         select_op <= "001";
-        wait for period_time;
+        wait for period_time*2;
         
         wr_en <= '0';
         select_reg_a <= "101";
         select_reg_b <= "101";
-        
+        wait for period_time*2;
         wait;
     end process;
 

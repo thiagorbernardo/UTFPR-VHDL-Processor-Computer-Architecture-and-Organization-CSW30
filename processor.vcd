@@ -19,16 +19,16 @@ $scope module processor $end
 $var reg 1 ! clk $end
 $var reg 1 " rst $end
 $var reg 1 # wr_en $end
-$var reg 1 $ sel_in1_alu $end
+$var reg 1 $ sel_y_alu $end
 $var reg 3 % select_reg_write[2:0] $end
 $var reg 3 & select_reg_a[2:0] $end
 $var reg 3 ' select_reg_b[2:0] $end
 $var reg 3 ( select_op[2:0] $end
 $var reg 16 ) ext_in[15:0] $end
 $var reg 16 * output[15:0] $end
-$var reg 16 + in0_alu[15:0] $end
-$var reg 16 , in1_alu[15:0] $end
-$var reg 16 - out_alu[15:0] $end
+$var reg 16 + x_alu[15:0] $end
+$var reg 16 , y_alu[15:0] $end
+$var reg 16 - output_alu[15:0] $end
 $var reg 16 . reg_b[15:0] $end
 $scope module alu_instance $end
 $var reg 16 / x[15:0] $end

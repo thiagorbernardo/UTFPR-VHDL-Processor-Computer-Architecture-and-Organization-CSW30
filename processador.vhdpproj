@@ -1,11 +1,9 @@
 ﻿<Project>
   <ItemGroup>
-    <File Include="Generated/processador.vhd" />
     <File Include="alu.vhd" />
     <File Include="alu_tb.vhd" />
-    <File Include="processador.vhd" />
-    <File Include="processador.vhdp" />
     <File Include="processor.vhd" />
+    <File Include="processor_tb.vcd" />
     <File Include="processor_tb.vhd" />
     <File Include="reg16bits.vhd" />
     <File Include="reg16bits_tb.vcd" />
@@ -15,6 +13,6 @@
     <File Include="reg_bank_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>reg_bank.vhd</HardwareStartPath>
+    <HardwareStartPath>processor.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>

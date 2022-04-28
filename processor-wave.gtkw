@@ -1,0 +1,36 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Thu Apr 28 00:25:17 2022
+[*]
+[dumpfile] "/home/thiago.bernardo/Documents/utfpr/arqcomp/processador/processor_tb.ghw"
+[dumpfile_mtime] "Thu Apr 28 00:24:43 2022"
+[dumpfile_size] 2825
+[savefile] "/home/thiago.bernardo/Documents/utfpr/arqcomp/processador/processor-wave.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] 820 70
+*-30.000000 300000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.processor_tb.
+[treeopen] top.processor_tb.uut.
+[sst_width] 233
+[signals_width] 198
+[sst_expanded] 1
+[sst_vpaned_height] 305
+@23
+#{top.processor_tb.uut.reg_a[15:0]} top.processor_tb.uut.reg_a[15] top.processor_tb.uut.reg_a[14] top.processor_tb.uut.reg_a[13] top.processor_tb.uut.reg_a[12] top.processor_tb.uut.reg_a[11] top.processor_tb.uut.reg_a[10] top.processor_tb.uut.reg_a[9] top.processor_tb.uut.reg_a[8] top.processor_tb.uut.reg_a[7] top.processor_tb.uut.reg_a[6] top.processor_tb.uut.reg_a[5] top.processor_tb.uut.reg_a[4] top.processor_tb.uut.reg_a[3] top.processor_tb.uut.reg_a[2] top.processor_tb.uut.reg_a[1] top.processor_tb.uut.reg_a[0]
+@22
+#{top.processor_tb.uut.reg_b[15:0]} top.processor_tb.uut.reg_b[15] top.processor_tb.uut.reg_b[14] top.processor_tb.uut.reg_b[13] top.processor_tb.uut.reg_b[12] top.processor_tb.uut.reg_b[11] top.processor_tb.uut.reg_b[10] top.processor_tb.uut.reg_b[9] top.processor_tb.uut.reg_b[8] top.processor_tb.uut.reg_b[7] top.processor_tb.uut.reg_b[6] top.processor_tb.uut.reg_b[5] top.processor_tb.uut.reg_b[4] top.processor_tb.uut.reg_b[3] top.processor_tb.uut.reg_b[2] top.processor_tb.uut.reg_b[1] top.processor_tb.uut.reg_b[0]
+#{top.processor_tb.uut.x_alu[15:0]} top.processor_tb.uut.x_alu[15] top.processor_tb.uut.x_alu[14] top.processor_tb.uut.x_alu[13] top.processor_tb.uut.x_alu[12] top.processor_tb.uut.x_alu[11] top.processor_tb.uut.x_alu[10] top.processor_tb.uut.x_alu[9] top.processor_tb.uut.x_alu[8] top.processor_tb.uut.x_alu[7] top.processor_tb.uut.x_alu[6] top.processor_tb.uut.x_alu[5] top.processor_tb.uut.x_alu[4] top.processor_tb.uut.x_alu[3] top.processor_tb.uut.x_alu[2] top.processor_tb.uut.x_alu[1] top.processor_tb.uut.x_alu[0]
+#{top.processor_tb.uut.y_alu[15:0]} top.processor_tb.uut.y_alu[15] top.processor_tb.uut.y_alu[14] top.processor_tb.uut.y_alu[13] top.processor_tb.uut.y_alu[12] top.processor_tb.uut.y_alu[11] top.processor_tb.uut.y_alu[10] top.processor_tb.uut.y_alu[9] top.processor_tb.uut.y_alu[8] top.processor_tb.uut.y_alu[7] top.processor_tb.uut.y_alu[6] top.processor_tb.uut.y_alu[5] top.processor_tb.uut.y_alu[4] top.processor_tb.uut.y_alu[3] top.processor_tb.uut.y_alu[2] top.processor_tb.uut.y_alu[1] top.processor_tb.uut.y_alu[0]
+#{top.processor_tb.uut.ext_in[15:0]} top.processor_tb.uut.ext_in[15] top.processor_tb.uut.ext_in[14] top.processor_tb.uut.ext_in[13] top.processor_tb.uut.ext_in[12] top.processor_tb.uut.ext_in[11] top.processor_tb.uut.ext_in[10] top.processor_tb.uut.ext_in[9] top.processor_tb.uut.ext_in[8] top.processor_tb.uut.ext_in[7] top.processor_tb.uut.ext_in[6] top.processor_tb.uut.ext_in[5] top.processor_tb.uut.ext_in[4] top.processor_tb.uut.ext_in[3] top.processor_tb.uut.ext_in[2] top.processor_tb.uut.ext_in[1] top.processor_tb.uut.ext_in[0]
+@28
+#{top.processor_tb.select_op[2:0]} top.processor_tb.select_op[2] top.processor_tb.select_op[1] top.processor_tb.select_op[0]
+#{top.processor_tb.uut.select_reg_a[2:0]} top.processor_tb.uut.select_reg_a[2] top.processor_tb.uut.select_reg_a[1] top.processor_tb.uut.select_reg_a[0]
+#{top.processor_tb.uut.select_reg_b[2:0]} top.processor_tb.uut.select_reg_b[2] top.processor_tb.uut.select_reg_b[1] top.processor_tb.uut.select_reg_b[0]
+#{top.processor_tb.uut.select_reg_write[2:0]} top.processor_tb.uut.select_reg_write[2] top.processor_tb.uut.select_reg_write[1] top.processor_tb.uut.select_reg_write[0]
+@22
+#{top.processor_tb.uut.output_alu[15:0]} top.processor_tb.uut.output_alu[15] top.processor_tb.uut.output_alu[14] top.processor_tb.uut.output_alu[13] top.processor_tb.uut.output_alu[12] top.processor_tb.uut.output_alu[11] top.processor_tb.uut.output_alu[10] top.processor_tb.uut.output_alu[9] top.processor_tb.uut.output_alu[8] top.processor_tb.uut.output_alu[7] top.processor_tb.uut.output_alu[6] top.processor_tb.uut.output_alu[5] top.processor_tb.uut.output_alu[4] top.processor_tb.uut.output_alu[3] top.processor_tb.uut.output_alu[2] top.processor_tb.uut.output_alu[1] top.processor_tb.uut.output_alu[0]
+#{top.processor_tb.output[15:0]} top.processor_tb.output[15] top.processor_tb.output[14] top.processor_tb.output[13] top.processor_tb.output[12] top.processor_tb.output[11] top.processor_tb.output[10] top.processor_tb.output[9] top.processor_tb.output[8] top.processor_tb.output[7] top.processor_tb.output[6] top.processor_tb.output[5] top.processor_tb.output[4] top.processor_tb.output[3] top.processor_tb.output[2] top.processor_tb.output[1] top.processor_tb.output[0]
+[pattern_trace] 1
+[pattern_trace] 0
