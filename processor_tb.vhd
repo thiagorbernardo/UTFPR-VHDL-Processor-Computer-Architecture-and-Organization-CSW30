@@ -12,7 +12,7 @@ architecture a_processor_tb of processor_tb is
             clk              : IN std_logic ;
             rst              : IN std_logic ;
             wr_en            : IN std_logic ;
-            sel_in1_alu      : IN std_logic ;
+            sel_y_alu        : IN std_logic ;
             select_reg_write : IN unsigned (2 downto 0);
             select_reg_a     : IN unsigned (2 downto 0);
             select_reg_b     : IN unsigned (2 downto 0);
@@ -25,7 +25,7 @@ architecture a_processor_tb of processor_tb is
     constant period_time : time := 100 ns;
     signal finished : std_logic := '0';
     
-    signal clk, rst, wr_en, sel_in1_alu : std_logic;
+    signal clk, rst, wr_en, sel_y_alu : std_logic;
     signal select_reg_write, select_reg_a, select_reg_b, select_op : unsigned (2 downto 0);
     signal ext_in, output : unsigned(15 downto 0);
     
@@ -36,7 +36,7 @@ begin
         clk              => clk,
         rst              => rst,
         wr_en            => wr_en,
-        sel_in1_alu      => sel_in1_alu,
+        sel_y_alu      => sel_y_alu,
         select_reg_write => select_reg_write,
         select_reg_a     => select_reg_a,
         select_reg_b     => select_reg_b,
@@ -74,53 +74,56 @@ begin
     process
     begin
         wr_en <= '1';
-        sel_in1_alu <= '1';
+        sel_y_alu <= '1';
         select_reg_a <= "000";
-        select_reg_b <= "000";
-        select_op <= "000";
+        select_reg_b <= "001";
+        select_op <= "100";
         
         select_reg_write <= "001";
         ext_in <= "0000000000000001";
-        wait for period_time*3;
+        wait for period_time*2;
         
+        select_op <= "000";
+        select_reg_b <= "010";
         select_reg_write <= "010";
         ext_in <= "0000000000000010";
         wait for period_time*2;
 
+        select_reg_b <= "011";
         select_reg_write <= "011";
         ext_in <= "0000000000000100";
         wait for period_time*2;
         
+        select_reg_b <= "100";
         select_reg_write <= "100";
         ext_in <= "0000000000001000";
         wait for period_time*2;
         
+        select_reg_b <= "101";
         select_reg_write <= "101";
         ext_in <= "0000000000010000";
         wait for period_time*2;
         
+        select_reg_b <= "110";
         select_reg_write <= "110";
         ext_in <= "0000000000100000";
         wait for period_time*2;
         
+        select_reg_b <= "111";
         select_reg_write <= "111";
-        ext_in <= "0000000000000001";
+        ext_in <= "0000000001000000";
         wait for period_time*2;
         
-        sel_in1_alu <= '0'; -- soma reg a com reg b, porém write enable desativado
+        sel_y_alu <= '0'; -- soma reg a com reg b, porém write enable desativado
         wr_en <= '0';
-        select_reg_write <= "001";
+        select_reg_write <= "111";
         select_reg_a <= "111";
         select_reg_b <= "100";
-        select_op <= "001";
+        select_op <= "000";
         wait for period_time*2;
         
-        sel_in1_alu <= '0'; -- soma reg a com reg b e salva no 101
+        -- soma reg a com reg b e salva no 101
         wr_en <= '1';
-        select_reg_write <= "101";
-        select_reg_a <= "111";
-        select_reg_b <= "011";
-        select_op <= "001";
         wait for period_time*2;
         
         wr_en <= '0';
