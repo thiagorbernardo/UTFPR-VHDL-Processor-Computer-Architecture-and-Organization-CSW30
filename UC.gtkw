@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Wed May  4 22:28:49 2022
+[*]
+[dumpfile] "/home/joaolm/Documentos/Registrador/processador/uc_tb.ghw"
+[dumpfile_mtime] "Wed May  4 22:26:21 2022"
+[dumpfile_size] 21410
+[savefile] "/home/joaolm/Documentos/Registrador/processador/UC.gtkw"
+[timestart] 0
+[size] 1848 1016
+[pos] -39 -39
+*-29.000000 2158000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.uc_tb.
+[treeopen] top.uc_tb.uut.
+[sst_width] 233
+[signals_width] 227
+[sst_expanded] 1
+[sst_vpaned_height] 289
+@28
+top.uc_tb.uut.jump_en
+@22
+#{top.uc_tb.instruction[14:0]} top.uc_tb.instruction[14] top.uc_tb.instruction[13] top.uc_tb.instruction[12] top.uc_tb.instruction[11] top.uc_tb.instruction[10] top.uc_tb.instruction[9] top.uc_tb.instruction[8] top.uc_tb.instruction[7] top.uc_tb.instruction[6] top.uc_tb.instruction[5] top.uc_tb.instruction[4] top.uc_tb.instruction[3] top.uc_tb.instruction[2] top.uc_tb.instruction[1] top.uc_tb.instruction[0]
+#{top.uc_tb.pc[15:0]} top.uc_tb.pc[15] top.uc_tb.pc[14] top.uc_tb.pc[13] top.uc_tb.pc[12] top.uc_tb.pc[11] top.uc_tb.pc[10] top.uc_tb.pc[9] top.uc_tb.pc[8] top.uc_tb.pc[7] top.uc_tb.pc[6] top.uc_tb.pc[5] top.uc_tb.pc[4] top.uc_tb.pc[3] top.uc_tb.pc[2] top.uc_tb.pc[1] top.uc_tb.pc[0]
+#{top.uc_tb.uut.pc_out[15:0]} top.uc_tb.uut.pc_out[15] top.uc_tb.uut.pc_out[14] top.uc_tb.uut.pc_out[13] top.uc_tb.uut.pc_out[12] top.uc_tb.uut.pc_out[11] top.uc_tb.uut.pc_out[10] top.uc_tb.uut.pc_out[9] top.uc_tb.uut.pc_out[8] top.uc_tb.uut.pc_out[7] top.uc_tb.uut.pc_out[6] top.uc_tb.uut.pc_out[5] top.uc_tb.uut.pc_out[4] top.uc_tb.uut.pc_out[3] top.uc_tb.uut.pc_out[2] top.uc_tb.uut.pc_out[1] top.uc_tb.uut.pc_out[0]
+#{top.uc_tb.uut.pc_in[15:0]} top.uc_tb.uut.pc_in[15] top.uc_tb.uut.pc_in[14] top.uc_tb.uut.pc_in[13] top.uc_tb.uut.pc_in[12] top.uc_tb.uut.pc_in[11] top.uc_tb.uut.pc_in[10] top.uc_tb.uut.pc_in[9] top.uc_tb.uut.pc_in[8] top.uc_tb.uut.pc_in[7] top.uc_tb.uut.pc_in[6] top.uc_tb.uut.pc_in[5] top.uc_tb.uut.pc_in[4] top.uc_tb.uut.pc_in[3] top.uc_tb.uut.pc_in[2] top.uc_tb.uut.pc_in[1] top.uc_tb.uut.pc_in[0]
+@23
+#{top.uc_tb.uut.opcode[3:0]} top.uc_tb.uut.opcode[3] top.uc_tb.uut.opcode[2] top.uc_tb.uut.opcode[1] top.uc_tb.uut.opcode[0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -2,8 +2,6 @@
   <ItemGroup>
     <File Include="alu.vhd" />
     <File Include="alu_tb.vhd" />
-    <File Include="pc.vhd" />
-    <File Include="pc_tb.vhd" />
     <File Include="processor.vhd" />
     <File Include="processor_tb.vcd" />
     <File Include="processor_tb.vhd" />
@@ -13,9 +11,16 @@
     <File Include="reg_bank.vhd" />
     <File Include="reg_bank_tb.vcd" />
     <File Include="reg_bank_tb.vhd" />
+    <File Include="rom.vhd" />
+    <File Include="rom_tb.vhd" />
+    <File Include="state_machine.vhd" />
+    <File Include="state_machine_tb.vcd" />
+    <File Include="state_machine_tb.vhd" />
     <File Include="uc.vhd" />
+    <File Include="uc_tb.vcd" />
+    <File Include="uc_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>rom.vhd</HardwareStartPath>
+    <HardwareStartPath>uc.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>
