@@ -1,4 +1,7 @@
 v 4
+file . "state_machine_tb.vhd" "2cde37d5100a6c185d76dcfe8deec393169917fb" "20220504003140.236":
+  entity state_machine_tb at 1( 0) + 0 on 559;
+  architecture a_state_machine_tb of state_machine_tb at 8( 103) + 0 on 560;
 file . "reg_bank.vhd" "fdb1e97ee8cafff76485c7aa14f893160c7fc592" "20220428013312.130":
   entity reg_bank at 1( 0) + 0 on 525;
   architecture a_reg_bank of reg_bank at 14( 334) + 0 on 526;
@@ -35,3 +38,6 @@ file . "processor.vhd" "58d286b9804a51751a5e09ef1a4b5c260c50c068" "2022042801331
 file . "reg_bank_tb.vhd" "28d9afb7fc0815d8c994cb4039d01957a0ff7d7a" "20220428013312.135":
   entity reg_bank_tb at 1( 0) + 0 on 527;
   architecture a_reg_bank_tb of reg_bank_tb at 8( 98) + 0 on 528;
+file . "state_machine.vhd" "7bccc166d541bb3e8184384b32d570bb965e6e17" "20220504003140.227":
+  entity state_machine at 1( 0) + 0 on 557;
+  architecture a_state_machine of state_machine at 13( 210) + 0 on 558;

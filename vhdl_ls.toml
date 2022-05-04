@@ -8,7 +8,9 @@ work.files = [
 	'reg16bits.vhd',
 	'reg16bits_tb.vhd',
 	'reg_bank.vhd',
-	'reg_bank_tb.vhd'
+	'reg_bank_tb.vhd',
+	'state_machine.vhd',
+	'state_machine_tb.vhd'
 ]
 [libraries.work]
 files = [
@@ -19,6 +21,8 @@ files = [
 	'reg16bits.vhd',
 	'reg16bits_tb.vhd',
 	'reg_bank.vhd',
-	'reg_bank_tb.vhd'
+	'reg_bank_tb.vhd',
+	'state_machine.vhd',
+	'state_machine_tb.vhd'
 ]
 # auto-generated-end

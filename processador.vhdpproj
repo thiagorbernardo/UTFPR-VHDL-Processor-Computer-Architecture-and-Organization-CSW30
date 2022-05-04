@@ -11,8 +11,11 @@
     <File Include="reg_bank.vhd" />
     <File Include="reg_bank_tb.vcd" />
     <File Include="reg_bank_tb.vhd" />
+    <File Include="state_machine.vhd" />
+    <File Include="state_machine_tb.vcd" />
+    <File Include="state_machine_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>processor.vhd</HardwareStartPath>
+    <HardwareStartPath>state_machine.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>
