@@ -70,7 +70,7 @@ begin
     port map
     (
         clk     => clk,
-        address => PC_out(6 downto 0),
+        address => address,
         data    => data 
     );
 
@@ -78,6 +78,7 @@ begin
     PC_wr_en <= state;
     
     opcode <= instruction(13 downto 10);
+    address <= PC_out(6 downto 0);
 
     jump_en <= '1' when opcode = "1111" else
     '0';

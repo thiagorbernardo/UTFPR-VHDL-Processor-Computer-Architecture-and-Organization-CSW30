@@ -62,10 +62,10 @@ begin
     process
     begin
         
-        instruction <= "00000000000000";
+        instruction <= "00010000000000";
         wait for period_time * 22;
         
-        instruction <= "00000000101111";
+        instruction <= "11110000100000";
         wait for period_time * 2;
         
         instruction <= "00000000000000";

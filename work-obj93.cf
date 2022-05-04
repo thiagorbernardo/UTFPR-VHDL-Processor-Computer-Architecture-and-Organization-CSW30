@@ -1,28 +1,28 @@
 v 4
-file . "uc_tb.vhd" "7315f7ec0393fc35cdf781a7c82de18831e78087" "20220504234003.536":
-  entity uc_tb at 1( 0) + 0 on 623;
-  architecture a_uc_tb of uc_tb at 8( 92) + 0 on 624;
-file . "state_machine_tb.vhd" "71729df0ff372943c84c329fcc21c5913df9823d" "20220504234003.525":
-  entity state_machine_tb at 1( 0) + 0 on 619;
-  architecture a_state_machine_tb of state_machine_tb at 8( 103) + 0 on 620;
-file . "rom_tb.vhd" "6ae6d71d9b7b546dc81f212c82916859fb4c285b" "20220504234003.515":
-  entity rom_tb at 1( 0) + 0 on 615;
-  architecture a_rom_tb of rom_tb at 8( 93) + 0 on 616;
-file . "reg_bank.vhd" "fdb1e97ee8cafff76485c7aa14f893160c7fc592" "20220504234003.486":
-  entity reg_bank at 1( 0) + 0 on 605;
-  architecture a_reg_bank of reg_bank at 14( 334) + 0 on 606;
-file . "processor_tb.vhd" "134ff02b260b31cae4df531ff4e6ced22a120189" "20220504234003.480":
-  entity processor_tb at 1( 0) + 0 on 603;
-  architecture a_processor_tb of processor_tb at 8( 99) + 0 on 604;
-file . "reg16bits_tb.vhd" "66ecab46206f0890aa3f1efb8db0c15463e284ec" "20220504234003.504":
-  entity reg16bits_tb at 1( 0) + 0 on 611;
-  architecture a_reg16bits_tb of reg16bits_tb at 8( 99) + 0 on 612;
-file . "reg16bits.vhd" "b116d4f703134f8e2446ba2be12730adbbed36ce" "20220504234003.497":
-  entity reg16bits at 1( 0) + 0 on 609;
-  architecture a_reg16bits of reg16bits at 15( 295) + 0 on 610;
-file . "alu_tb.vhd" "9b9e6c6cc2982bfa87e0e9d1603741b0b64a8bbc" "20220504234003.464":
-  entity alu_tb at 1( 0) + 0 on 599;
-  architecture a_alu_tb of alu_tb at 8( 93) + 0 on 600;
+file . "uc_tb.vhd" "a89b062da3c05186250284a133d18925814e662a" "20220504235210.823":
+  entity uc_tb at 1( 0) + 0 on 735;
+  architecture a_uc_tb of uc_tb at 8( 92) + 0 on 736;
+file . "state_machine_tb.vhd" "71729df0ff372943c84c329fcc21c5913df9823d" "20220504235210.809":
+  entity state_machine_tb at 1( 0) + 0 on 731;
+  architecture a_state_machine_tb of state_machine_tb at 8( 103) + 0 on 732;
+file . "rom_tb.vhd" "6ae6d71d9b7b546dc81f212c82916859fb4c285b" "20220504235210.796":
+  entity rom_tb at 1( 0) + 0 on 727;
+  architecture a_rom_tb of rom_tb at 8( 93) + 0 on 728;
+file . "reg_bank.vhd" "fdb1e97ee8cafff76485c7aa14f893160c7fc592" "20220504235210.752":
+  entity reg_bank at 1( 0) + 0 on 717;
+  architecture a_reg_bank of reg_bank at 14( 334) + 0 on 718;
+file . "processor_tb.vhd" "134ff02b260b31cae4df531ff4e6ced22a120189" "20220504235210.738":
+  entity processor_tb at 1( 0) + 0 on 715;
+  architecture a_processor_tb of processor_tb at 8( 99) + 0 on 716;
+file . "reg16bits_tb.vhd" "66ecab46206f0890aa3f1efb8db0c15463e284ec" "20220504235210.782":
+  entity reg16bits_tb at 1( 0) + 0 on 723;
+  architecture a_reg16bits_tb of reg16bits_tb at 8( 99) + 0 on 724;
+file . "reg16bits.vhd" "b116d4f703134f8e2446ba2be12730adbbed36ce" "20220504235210.775":
+  entity reg16bits at 1( 0) + 0 on 721;
+  architecture a_reg16bits of reg16bits at 15( 295) + 0 on 722;
+file . "alu_tb.vhd" "9b9e6c6cc2982bfa87e0e9d1603741b0b64a8bbc" "20220504235210.712":
+  entity alu_tb at 1( 0) + 0 on 711;
+  architecture a_alu_tb of alu_tb at 8( 93) + 0 on 712;
 file . "greater_or_equal.vhd" "1b9c00ba0bdf5f8809f8754305c278c556756332" "20220407001051.751":
   entity greater_or_equal at 1( 0) + 0 on 27;
   architecture a_greater_or_equal of greater_or_equal at 12( 197) + 0 on 28;
@@ -35,21 +35,21 @@ file . "sum_and_sub_tb.vhd" "0955dfb823e071a6cd98d3c5ed02e863f7d7bd0e" "20220407
 file . "greater_or_equal_tb.vhd" "e083354dcf1c372413c0a590b3987341e5120c4e" "20220407001051.759":
   entity greater_or_equal_tb at 1( 0) + 0 on 29;
   architecture greater_or_equal_tb of greater_or_equal_tb at 8( 106) + 0 on 30;
-file . "alu.vhd" "3ab429499fc1117f53b47dfb5a51d01312b2f12d" "20220504234003.455":
-  entity alu at 1( 0) + 0 on 597;
-  architecture a_alu of alu at 14( 287) + 0 on 598;
-file . "processor.vhd" "58d286b9804a51751a5e09ef1a4b5c260c50c068" "20220504234003.475":
-  entity processor at 1( 0) + 0 on 601;
-  architecture a_processor of processor at 20( 528) + 0 on 602;
-file . "reg_bank_tb.vhd" "28d9afb7fc0815d8c994cb4039d01957a0ff7d7a" "20220504234003.491":
-  entity reg_bank_tb at 1( 0) + 0 on 607;
-  architecture a_reg_bank_tb of reg_bank_tb at 8( 98) + 0 on 608;
-file . "state_machine.vhd" "7bccc166d541bb3e8184384b32d570bb965e6e17" "20220504234003.520":
-  entity state_machine at 1( 0) + 0 on 617;
-  architecture a_state_machine of state_machine at 13( 210) + 0 on 618;
-file . "rom.vhd" "02351bd20b2eb1ff1fe6ae776cfa0d2ea5a279b5" "20220504234003.509":
-  entity rom at 1( 0) + 0 on 613;
-  architecture a_rom of rom at 13( 227) + 0 on 614;
-file . "uc.vhd" "be778cb3ba6fc9e41d9fc92a53fccd050dc34667" "20220504234003.530":
-  entity uc at 1( 0) + 0 on 621;
-  architecture a_uc of uc at 14( 261) + 0 on 622;
+file . "alu.vhd" "3ab429499fc1117f53b47dfb5a51d01312b2f12d" "20220504235210.699":
+  entity alu at 1( 0) + 0 on 709;
+  architecture a_alu of alu at 14( 287) + 0 on 710;
+file . "processor.vhd" "58d286b9804a51751a5e09ef1a4b5c260c50c068" "20220504235210.725":
+  entity processor at 1( 0) + 0 on 713;
+  architecture a_processor of processor at 20( 528) + 0 on 714;
+file . "reg_bank_tb.vhd" "28d9afb7fc0815d8c994cb4039d01957a0ff7d7a" "20220504235210.764":
+  entity reg_bank_tb at 1( 0) + 0 on 719;
+  architecture a_reg_bank_tb of reg_bank_tb at 8( 98) + 0 on 720;
+file . "state_machine.vhd" "7bccc166d541bb3e8184384b32d570bb965e6e17" "20220504235210.803":
+  entity state_machine at 1( 0) + 0 on 729;
+  architecture a_state_machine of state_machine at 13( 210) + 0 on 730;
+file . "rom.vhd" "02351bd20b2eb1ff1fe6ae776cfa0d2ea5a279b5" "20220504235210.789":
+  entity rom at 1( 0) + 0 on 725;
+  architecture a_rom of rom at 13( 227) + 0 on 726;
+file . "uc.vhd" "af5fabf519b8b6a664fe27cbebab0164ad52049c" "20220504235210.816":
+  entity uc at 1( 0) + 0 on 733;
+  architecture a_uc of uc at 14( 261) + 0 on 734;
