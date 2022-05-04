@@ -11,7 +11,7 @@ architecture a_uc_tb of uc_tb is
         (
             clk : IN  std_logic;
             rst : IN  std_logic;
-            instruction : IN unsigned (14 downto 0);
+            instruction : IN unsigned (13 downto 0);
             PC: OUT unsigned(15 downto 0)
         );
     end component;
@@ -20,7 +20,7 @@ architecture a_uc_tb of uc_tb is
     signal finished : std_logic := '0';
     
     signal clk, rst: std_logic;
-    signal instruction : unsigned (14 downto 0);
+    signal instruction : unsigned (13 downto 0);
     signal PC : unsigned(15 downto 0);
     
 begin
@@ -62,13 +62,13 @@ begin
     process
     begin
         
-        instruction <= "000000000000000";
+        instruction <= "00000000000000";
         wait for period_time * 22;
         
-        instruction <= "111101100100001";
+        instruction <= "00000000101111";
         wait for period_time * 2;
         
-        instruction <= "000000000000000";
+        instruction <= "00000000000000";
         wait;
         
     end process;

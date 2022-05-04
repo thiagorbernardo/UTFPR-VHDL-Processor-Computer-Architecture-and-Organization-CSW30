@@ -6,7 +6,7 @@ entity uc is
     port(
         clk : IN  std_logic;
         rst : IN  std_logic;
-        instruction : IN unsigned (14 downto 0);
+        instruction : IN unsigned (13 downto 0);
         PC: OUT unsigned(15 downto 0)
     );
 end entity uc;
@@ -32,9 +32,19 @@ architecture a_uc of uc is
         );
     end component state_machine;
 
+    component rom is
+        port
+        (
+            clk     : IN STD_LOGIC ;
+            address : IN unsigned (6 downto 0);
+            data    : OUT unsigned (13 downto 0)
+        );
+    end component;
     
     signal PC_in, PC_out : unsigned(15 downto 0);
     signal opcode : unsigned(3 downto 0);
+    signal address : unsigned(6 downto 0);
+    signal data : unsigned(13 downto 0);
     signal state, PC_wr_en, jump_en : std_logic;
     
 begin
@@ -43,7 +53,7 @@ begin
     (
         clk      => clk,
         rst      => rst,
-        wr_en    => PC_wr_en,
+        wr_en    => '1',
         data_in  => PC_in,
         data_out => PC_out
     );
@@ -55,16 +65,25 @@ begin
         rst   => rst,
         state => state
     );
+    
+    uc_rom : rom
+    port map
+    (
+        clk     => clk,
+        address => PC_out(6 downto 0),
+        data    => data 
+    );
+
 
     PC_wr_en <= state;
     
-    opcode <= instruction(14 downto 11); -- AVERIGUAR
+    opcode <= instruction(13 downto 10);
 
     jump_en <= '1' when opcode = "1111" else
     '0';
-
+    
     PC_in <= PC_out(15 downto 11) & instruction (10 downto 0) when jump_en = '1' else
-    PC_in + "0000000000000001";
+    PC_out + "000000000000001";
     
     PC <= PC_in;
     
