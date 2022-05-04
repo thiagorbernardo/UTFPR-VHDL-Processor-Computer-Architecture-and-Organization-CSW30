@@ -14,6 +14,9 @@
     <File Include="state_machine.vhd" />
     <File Include="state_machine_tb.vcd" />
     <File Include="state_machine_tb.vhd" />
+    <File Include="rom.vhd" />
+    <File Include="rom_tb.vcd" />
+    <File Include="rom_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
     <HardwareStartPath>state_machine.vhd</HardwareStartPath>

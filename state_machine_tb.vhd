@@ -52,9 +52,4 @@ begin
         wait;
     end process clk_proc;
     
-    process -- teste
-    begin
-        wait;
-    end process;
-    
 end architecture;
