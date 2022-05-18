@@ -14,12 +14,12 @@ file . "reg_bank.vhd" "fdb1e97ee8cafff76485c7aa14f893160c7fc592" "20220505193556
 file . "processor_tb.vhd" "134ff02b260b31cae4df531ff4e6ced22a120189" "20220505193556.257":
   entity processor_tb at 1( 0) + 0 on 899;
   architecture a_processor_tb of processor_tb at 8( 99) + 0 on 900;
-file . "reg16bits_tb.vhd" "66ecab46206f0890aa3f1efb8db0c15463e284ec" "20220505193556.281":
-  entity reg16bits_tb at 1( 0) + 0 on 907;
-  architecture a_reg16bits_tb of reg16bits_tb at 8( 99) + 0 on 908;
-file . "reg16bits.vhd" "b116d4f703134f8e2446ba2be12730adbbed36ce" "20220505193556.275":
-  entity reg16bits at 1( 0) + 0 on 905;
-  architecture a_reg16bits of reg16bits at 15( 295) + 0 on 906;
+file . "reg14bits_tb.vhd" "66ecab46206f0890aa3f1efb8db0c15463e284ec" "20220505193556.281":
+  entity reg14bits_tb at 1( 0) + 0 on 907;
+  architecture a_reg14bits_tb of reg14bits_tb at 8( 99) + 0 on 908;
+file . "reg14bits.vhd" "b116d4f703134f8e2446ba2be12730adbbed36ce" "20220505193556.275":
+  entity reg14bits at 1( 0) + 0 on 905;
+  architecture a_reg14bits of reg14bits at 15( 295) + 0 on 906;
 file . "alu_tb.vhd" "9b9e6c6cc2982bfa87e0e9d1603741b0b64a8bbc" "20220505193556.242":
   entity alu_tb at 1( 0) + 0 on 895;
   architecture a_alu_tb of alu_tb at 8( 93) + 0 on 896;

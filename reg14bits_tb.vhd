@@ -2,26 +2,26 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity reg16bits_tb is
+entity reg14bits_tb is
 end;
 
-architecture a_reg16bits_tb of reg16bits_tb is
-    component reg16bits is
+architecture a_reg14bits_tb of reg14bits_tb is
+    component reg14bits is
         port
         (
             clk      : IN std_logic ;
             rst      : IN std_logic ;
             wr_en    : IN std_logic ;
-            data_in  : IN unsigned (15 downto 0);
-            data_out : OUT unsigned (15 downto 0)
+            data_in  : IN unsigned (13 downto 0);
+            data_out : OUT unsigned (13 downto 0)
         );
     end component;
     constant period_time : time := 100 ns; -- tempo do clock
     signal finished : std_logic := '0'; -- booleano para indicar se o processo acabou
     signal clk, rst, wr_en : std_logic; -- clock, reset, write enable
-    signal data_in, data_out : unsigned(15 downto 0); -- input e output
+    signal data_in, data_out : unsigned(13 downto 0); -- input e output
 begin
-    uut: reg16bits
+    uut: reg14bits
     port map
     (
         clk      => clk,
@@ -60,13 +60,13 @@ begin
     process -- sinais de teste
     begin
         wr_en <= '0';
-        data_in <= "0000000000000001";
+        data_in <= "00000000000001";
         wait for 200 ns;
         wr_en <= '1';
-        data_in <= "0000000000000010";
+        data_in <= "00000000000010";
         wait for 200 ns;
         wr_en <= '0';
-        data_in <= "0000000000000100";
+        data_in <= "00000000000100";
         wait;
     end process;
     

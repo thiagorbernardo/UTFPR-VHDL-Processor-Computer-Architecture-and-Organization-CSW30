@@ -6,27 +6,27 @@ entity reg_bank is
     port(
         clk, rst, wr_en : in std_logic;
         select_reg_a, select_reg_b, select_write_reg : in unsigned(2 downto 0);
-        write_data: in unsigned(15 downto 0);
-        reg_a, reg_b : out unsigned(15 downto 0)
+        write_data: in unsigned(13 downto 0);
+        reg_a, reg_b : out unsigned(13 downto 0)
     );
 end entity;
 
 architecture a_reg_bank of reg_bank is
-    component reg16bits is
+    component reg14bits is
         port
         (
             clk      : IN std_logic ;
             rst      : IN std_logic ;
             wr_en    : IN std_logic ;
-            data_in  : IN unsigned (15 downto 0);
-            data_out : OUT unsigned (15 downto 0)
+            data_in  : IN unsigned (13 downto 0);
+            data_out : OUT unsigned (13 downto 0)
         );
     end component;
 
     signal wr_en_1, wr_en_2, wr_en_3, wr_en_4, wr_en_5, wr_en_6, wr_en_7, wr_en_8 : std_logic;
-    signal data_out_reg_1, data_out_reg_2, data_out_reg_3, data_out_reg_4, data_out_reg_5, data_out_reg_6, data_out_reg_7, data_out_reg_8: unsigned(15 downto 0);
+    signal data_out_reg_1, data_out_reg_2, data_out_reg_3, data_out_reg_4, data_out_reg_5, data_out_reg_6, data_out_reg_7, data_out_reg_8: unsigned(13 downto 0);
 begin
-   reg1: reg16bits
+   reg1: reg14bits
     port map
     (
         clk      => clk,
@@ -36,7 +36,7 @@ begin
         data_out => data_out_reg_1
     );
 
-    reg2: reg16bits
+    reg2: reg14bits
     port map
     (
         clk      => clk,
@@ -46,7 +46,7 @@ begin
         data_out => data_out_reg_2
     );
 
-    reg3: reg16bits
+    reg3: reg14bits
     port map
     (
         clk      => clk,
@@ -56,7 +56,7 @@ begin
         data_out => data_out_reg_3
     );
 
-    reg4: reg16bits
+    reg4: reg14bits
     port map
     (
         clk      => clk,
@@ -66,7 +66,7 @@ begin
         data_out => data_out_reg_4
     );
 
-    reg5: reg16bits
+    reg5: reg14bits
     port map
     (
         clk      => clk,
@@ -76,7 +76,7 @@ begin
         data_out => data_out_reg_5
     );
 
-    reg6: reg16bits
+    reg6: reg14bits
     port map
     (
         clk      => clk,
@@ -86,7 +86,7 @@ begin
         data_out => data_out_reg_6
     );
 
-    reg7: reg16bits
+    reg7: reg14bits
     port map
     (
         clk      => clk,
@@ -112,7 +112,7 @@ begin
       data_out_reg_5 when select_reg_a = "101" else 
       data_out_reg_6 when select_reg_a = "110" else 
       data_out_reg_7 when select_reg_a = "111" else 
-      "0000000000000000";
+      "00000000000000";
   
     reg_b <= data_out_reg_1 when select_reg_b = "001" else 
       data_out_reg_2 when select_reg_b = "010" else 
@@ -121,5 +121,5 @@ begin
       data_out_reg_5 when select_reg_b = "101" else 
       data_out_reg_6 when select_reg_b = "110" else 
       data_out_reg_7 when select_reg_b = "111" else 
-      "0000000000000000";
+      "00000000000000";
 end architecture;

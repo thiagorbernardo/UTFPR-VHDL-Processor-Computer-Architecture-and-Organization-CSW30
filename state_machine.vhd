@@ -6,7 +6,7 @@ entity state_machine is
     port(
         clk : in std_logic;
         rst : in std_logic;
-        state : out unsigned(1 downto 0);
+        state : out unsigned(1 downto 0)
     );
 end entity;
 

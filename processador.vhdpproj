@@ -5,9 +5,9 @@
     <File Include="processor.vhd" />
     <File Include="processor_tb.vcd" />
     <File Include="processor_tb.vhd" />
-    <File Include="reg16bits.vhd" />
-    <File Include="reg16bits_tb.vcd" />
-    <File Include="reg16bits_tb.vhd" />
+    <File Include="reg14bits.vhd" />
+    <File Include="reg14bits_tb.vcd" />
+    <File Include="reg14bits_tb.vhd" />
     <File Include="reg_bank.vhd" />
     <File Include="reg_bank_tb.vcd" />
     <File Include="reg_bank_tb.vhd" />

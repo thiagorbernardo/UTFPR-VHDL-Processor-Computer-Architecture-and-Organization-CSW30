@@ -9,8 +9,8 @@ ghdl -a processor_tb.vhd
 ghdl -a reg_bank.vhd
 ghdl -a reg_bank_tb.vhd
 
-ghdl -a reg16bits.vhd
-ghdl -a reg16bits_tb.vhd
+ghdl -a reg14bits.vhd
+ghdl -a reg14bits_tb.vhd
 
 # ghdl -a rom.vhd
 # ghdl -a rom_tb.vhd
