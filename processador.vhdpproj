@@ -21,6 +21,6 @@
     <File Include="uc_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>rom.vhd</HardwareStartPath>
+    <HardwareStartPath>uc.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>

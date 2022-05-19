@@ -9,10 +9,15 @@ architecture a_uc_tb of uc_tb is
     component uc is
         port
         (
-            clk : IN  std_logic;
-            rst : IN  std_logic;
-            instruction : IN unsigned (13 downto 0);
-            PC: OUT unsigned(15 downto 0)
+            clk             : IN std_logic ;
+            rst             : IN std_logic ;
+            instruction_in  : IN unsigned (13 downto 0);
+            instruction_out : OUT unsigned (13 downto 0);
+            PC              : OUT unsigned (13 downto 0);
+            fetch           : OUT std_logic ;
+            decode          : OUT std_logic ;
+            execute         : OUT std_logic ;
+            state           : OUT unsigned (1 downto 0)
         );
     end component;
     
@@ -20,18 +25,25 @@ architecture a_uc_tb of uc_tb is
     signal finished : std_logic := '0';
     
     signal clk, rst: std_logic;
-    signal instruction : unsigned (13 downto 0);
-    signal PC : unsigned(15 downto 0);
-    
+    signal instruction_in, instruction_out, PC : unsigned (13 downto 0);
+    signal fetch, decode, execute: std_logic;
+    signal state: unsigned (1 downto 0);
+
 begin
-    uut : uc
+    uut: uc
     port map
     (
-        clk         => clk,
-        rst         => rst,
-        instruction => instruction,
-        PC          => PC
+        clk             => clk,
+        rst             => rst,
+        instruction_in  => instruction_in,
+        instruction_out => instruction_out,
+        PC              => PC,
+        fetch           => fetch,
+        decode          => decode,
+        execute         => execute,
+        state           => state
     );
+
 
     reset_global: process
     begin
@@ -61,14 +73,19 @@ begin
     
     process
     begin
+        -- resumo: program counter ira somar por 10 periodos
+        -- depois ira fazer um jump para o endereco 3
+        -- depois ira continuar incrementando 1 no program counter
+        instruction_in <= "00000000000000"; -- NOP
+        wait for period_time * 10;
         
-        instruction <= "00010000000000";
-        wait for period_time * 22;
-        
-        instruction <= "11110000100000";
+        instruction_in <= "11110001110011"; -- JUMP
         wait for period_time * 2;
         
-        instruction <= "00000000000000";
+        instruction_in <= "00000000000000"; -- NOP
+        wait for period_time * 10;
+
+        instruction_in <= "11110000101010"; -- JUMP
         wait;
         
     end process;

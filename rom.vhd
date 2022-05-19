@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 entity rom is
     port(
         clk: IN STD_LOGIC;
-        address: IN unsigned(6 downto 0);
+        address: IN unsigned(9 downto 0);
         data: OUT unsigned(13 downto 0)
     );
 end entity rom;

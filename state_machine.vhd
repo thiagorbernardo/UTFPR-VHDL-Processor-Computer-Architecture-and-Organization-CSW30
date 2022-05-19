@@ -19,7 +19,7 @@ begin
             internal_state <= "00";
         elsif rising_edge(clk) then
             if (internal_state = "10") then
-                internal_state <= "0";
+                internal_state <= "00";
             else
                 internal_state <= internal_state + 1;
             end if;
