@@ -9,13 +9,13 @@ architecture a_alu_tb of alu_tb is
     component alu is
         port
         (
-            x         : IN unsigned (15 downto 0);
-            y         : IN unsigned (15 downto 0);
+            x         : IN unsigned (13 downto 0);
+            y         : IN unsigned (13 downto 0);
             select_op : IN unsigned (2 downto 0);
-            output    : OUT unsigned (15 downto 0)
+            output    : OUT unsigned (13 downto 0)
         );
     end component;
-    signal x, y, output: unsigned(15 downto 0);
+    signal x, y, output: unsigned(13 downto 0);
     signal select_op: unsigned(2 downto 0);
 
 begin
@@ -32,35 +32,35 @@ begin
     process
     begin
         select_op <= "000"; --SUM
-        x <= "0000000010000001";
-        y <= "1111111101111110";
+        x <= "00000010000001";
+        y <= "11111101111110";
         wait for 50 ns;
         select_op <= "001"; --SUB
-        x <= "0000000010000001";
-        y <= "1111111101111110";
+        x <= "00000010000001";
+        y <= "11111101111110";
         wait for 50 ns;
         select_op <= "010"; --AND
-        x <= "0000000010000001";
-        y <= "1111111101111110";
+        x <= "00000010000001";
+        y <= "11111101111110";
         wait for 50 ns;
         select_op <= "011"; --XOR
-        x <= "0000000010000001";
-        y <= "1111111101111101";
+        x <= "00000010000001";
+        y <= "11111101111101";
         wait for 50 ns;
         select_op <= "100"; --NOT
-        x <= "0000000010000001";
-        y <= "1111111101111110";
+        x <= "00000010000001";
+        y <= "11111101111110";
         wait for 50 ns;
         select_op <= "101"; --OR
-        x <= "0000000010000001";
-        y <= "1111111101111110";
+        x <= "00000010000001";
+        y <= "11111101111110";
         wait for 50 ns;
         select_op <= "110"; --IS ODD
-        x <= "0000000010000001";
+        x <= "00000010000001";
         wait for 50 ns;
         select_op <= "111"; -- GREATER OR EQUAL
-        x <= "0000000010000001";
-        y <= "1111111101111101";
+        x <= "00000010000001";
+        y <= "11111101111101";
         wait for 50 ns;
         wait;
     end process;
