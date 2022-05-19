@@ -12,14 +12,14 @@ ghdl -a reg_bank_tb.vhd
 ghdl -a reg14bits.vhd
 ghdl -a reg14bits_tb.vhd
 
-# ghdl -a rom.vhd
-# ghdl -a rom_tb.vhd
+ghdl -a rom.vhd
+ghdl -a rom_tb.vhd
 
-# ghdl -a state_machine.vhd
-# ghdl -a state_machine_tb.vhd
+ghdl -a state_machine.vhd
+ghdl -a state_machine_tb.vhd
 
-# ghdl -a uc.vhd
-# ghdl -a uc_tb.vhd
+ghdl -a uc.vhd
+ghdl -a uc_tb.vhd
 
-ghdl -r reg_bank_tb --wave=reg_bank_tb.ghw
-gtkwave reg_bank_tb.ghw
+ghdl -r processor_tb --wave=processor_tb.ghw
+gtkwave processor_tb.ghw

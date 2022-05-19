@@ -9,8 +9,8 @@ entity processor is
         state    : out unsigned(1 downto 0);
         PC        : out unsigned(13 downto 0);
         instruction : out unsigned(13 downto 0);
-        regA      : out unsigned(13 downto 0);
-        regB      : out unsigned(13 downto 0);
+        reg_a_output      : out unsigned(13 downto 0);
+        reg_b_output      : out unsigned(13 downto 0);
         output     : out unsigned(13 downto 0)
     );
 end entity processor;
@@ -65,10 +65,10 @@ architecture a_processor of processor is
         );
     end component;
 
-    signal alu_x, alu_y, alu_out, reg_a, reg_b : unsigned(13 downto 0);
+    signal alu_x, alu_y, alu_out, proc_regA, proc_regB : unsigned(13 downto 0);
 
     signal reg_bank_wr_en, sel_in_alu : std_logic;
-    signal sel_write_reg, sel_reg_a, sel_reg_b, sel_op : unsigned(2 downto 0);
+    signal sel_write_reg, sel_reg_a, sel_reg_b, select_op : unsigned(2 downto 0);
 
     signal instruction_address : unsigned(9 downto 0); -- ROM input
     signal PC_internal : unsigned(13 downto 0); -- Resultado do PC
@@ -77,8 +77,8 @@ architecture a_processor of processor is
     signal state_internal : unsigned(1 downto 0); -- estado da maquina de estados
     signal fetch, execute, decode : std_logic; -- booleano que indica qual estado esta a maquina de estados
 
-    signal instruction_reg : unsigned(13 downto 0); -- 
-    signal opcode : unsigned(13 downto 11);
+    signal instruction_reg : unsigned(13 downto 0);
+    signal opcode : unsigned(13 downto 10);
 
     signal select_add_sub_source : std_logic;
     signal top_level : unsigned(13 downto 0);
@@ -115,7 +115,7 @@ begin
     (
         x => alu_x,
         y => alu_y,
-        sel_op => sel_op,
+        select_op => select_op,
         output => alu_out
     );
     
@@ -124,12 +124,12 @@ begin
         clk => clk,
         rst => rst,
         wr_en => reg_bank_wr_en,
-        sel_write_reg => sel_write_reg, -- operacoes sempre escritas no reg a
-        sel_reg_a => sel_write_reg, -- operacoes sempre no reg a
-        sel_reg_b => sel_reg_b,
+        select_write_reg => sel_write_reg, -- operacoes sempre escritas no reg a
+        select_reg_a => sel_write_reg, -- operacoes sempre no reg a
+        select_reg_b => sel_reg_b,
         write_data => alu_out,
-        regA => reg_a,
-        regB => reg_b
+        reg_a => proc_regA,
+        reg_b => proc_regB
     );
     
     opcode <= instruction_reg(13 downto 10); -- opcode sao os 4 bits mais significativos da instrucao (MSB)
@@ -150,26 +150,25 @@ begin
 
     sel_write_reg <= instruction_reg(8 downto 6) when (opcode = opcode_add or opcode = opcode_sub) else
                      instruction_reg(9 downto 7) when (opcode = opcode_move) else
-                     "000"; -- Sempre escreve no reg_a - no caso ira cair nessa condicao para jump e nop, ou seja, write enable estara em 0
+                     "000"; -- Sempre escreve no regA - no caso ira cair nessa condicao para jump e nop, ou seja, write enable estara em 0
     
-    sel_op <= "000" when opcode = opcode_add or opcode = opcode_move else
+    select_op <= "000" when opcode = opcode_add or opcode = opcode_move else
               "001" when opcode = opcode_sub else
               "000";
 
     instruction_address <= PC_internal(9 downto 0); 
 
     -- se for move pegar o registrador 0 para fazer 0 + registrador
-    alu_x <= "0000000000000" when opcode = opcode_move else reg_a;
+    alu_x <= "00000000000000" when opcode = opcode_move else proc_regA;
 
-    alu_y <= reg_b      when sel_in_alu = '0' else
+    alu_y <= proc_regB  when sel_in_alu = '0' else
              top_level  when sel_in_alu = '1' else
-             "0000000000000";
+             "00000000000000";
     
     state <= state_internal;
     PC <= PC_internal;
     output <= alu_out;
     instruction <= instruction_reg;
-    regA <= reg_a;
-    regB <= reg_b;
-    
+    reg_a_output <= proc_regA;
+    reg_b_output <= proc_regB;
 end architecture a_processor;

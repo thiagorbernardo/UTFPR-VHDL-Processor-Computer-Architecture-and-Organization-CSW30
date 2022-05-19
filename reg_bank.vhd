@@ -23,8 +23,8 @@ architecture a_reg_bank of reg_bank is
         );
     end component;
 
-    signal wr_en_1, wr_en_2, wr_en_3, wr_en_4, wr_en_5, wr_en_6, wr_en_7, wr_en_8 : std_logic;
-    signal data_out_reg_1, data_out_reg_2, data_out_reg_3, data_out_reg_4, data_out_reg_5, data_out_reg_6, data_out_reg_7, data_out_reg_8: unsigned(13 downto 0);
+    signal wr_en_1, wr_en_2, wr_en_3, wr_en_4, wr_en_5, wr_en_6, wr_en_7 : std_logic;
+    signal data_out_reg_1, data_out_reg_2, data_out_reg_3, data_out_reg_4, data_out_reg_5, data_out_reg_6, data_out_reg_7: unsigned(13 downto 0);
 begin
    reg1: reg14bits
     port map
