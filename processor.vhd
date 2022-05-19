@@ -19,7 +19,7 @@ architecture a_processor of processor is
     component rom
     port(
         clk    : in  std_logic;
-        address : in  unsigned(6 downto 0);
+        address : in  unsigned(9 downto 0);
         data     : out unsigned(13 downto 0)
     );
 end component rom;
@@ -65,7 +65,7 @@ signal alu_x, alu_y, alu_out, reg_b : unsigned(13 downto 0);
 signal reg_wr_en, sel_in_alu                         : std_logic;
 signal sel_write_reg, sel_reg_a, sel_reg_b, sel_op                       : unsigned(2 downto 0);
 
-signal instruction_address : unsigned(6 downto 0);
+signal instruction_address : unsigned(9 downto 0);
 signal PC_in         : unsigned(13 downto 0);
 signal memory_out      : unsigned(13 downto 0);
 
@@ -159,7 +159,7 @@ begin
               "001" when opcode = opcode_sub else
               "000";
 
-    instruction_address <= PC_in(6 downto 0); --?
+    instruction_address <= PC_in(9 downto 0); 
 
     alu_y <= reg_b      when sel_in_alu = '0' else
              top_level  when sel_in_alu = '1' else
