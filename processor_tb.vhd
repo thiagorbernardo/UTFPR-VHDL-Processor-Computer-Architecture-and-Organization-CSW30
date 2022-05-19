@@ -9,16 +9,14 @@ architecture a_processor_tb of processor_tb is
     component processor is
         port
         (
-            clk              : IN std_logic ;
-            rst              : IN std_logic ;
-            wr_en            : IN std_logic ;
-            sel_y_alu        : IN std_logic ;
-            select_reg_write : IN unsigned (2 downto 0);
-            select_reg_a     : IN unsigned (2 downto 0);
-            select_reg_b     : IN unsigned (2 downto 0);
-            select_op        : IN unsigned (2 downto 0);
-            ext_in           : IN unsigned (15 downto 0);
-            output           : OUT unsigned (15 downto 0)
+            clk         : IN std_logic ;
+            rst         : IN std_logic ;
+            state       : OUT unsigned (1 downto 0);
+            PC          : OUT unsigned (13 downto 0);
+            instruction : OUT unsigned (13 downto 0);
+            regA        : OUT unsigned (13 downto 0);
+            regB        : OUT unsigned (13 downto 0);
+            output      : OUT unsigned (13 downto 0)
         );
     end component;
     

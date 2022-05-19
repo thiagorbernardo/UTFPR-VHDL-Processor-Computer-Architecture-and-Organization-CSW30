@@ -21,5 +21,5 @@ ghdl -a reg14bits_tb.vhd
 # ghdl -a uc.vhd
 # ghdl -a uc_tb.vhd
 
-ghdl -r processor_tb --wave=processor_tb.ghw
-gtkwave processor_tb.ghw
+ghdl -r reg_bank_tb --wave=reg_bank_tb.ghw
+gtkwave reg_bank_tb.ghw
