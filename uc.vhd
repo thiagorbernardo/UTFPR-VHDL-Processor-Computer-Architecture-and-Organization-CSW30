@@ -79,7 +79,7 @@ begin
     instruction_reg_wr_en <= fetch_internal;
     decode_internal <= '1' when state_internal = "01" else '0'; -- se está em decode precisa escrever no program counter
     PC_reg_wr_en <= decode_internal;
-    execute <= '1' when state_internal = "10" else '0'; -- se está em execute ou nao
+    execute_internal <= '1' when state_internal = "10" else '0'; -- se está em execute ou nao
 
     -- dados da instrucao
     opcode <= instruction_out_internal(13 downto 10); -- opcode sao os 4 bits mais significativos da instrucao

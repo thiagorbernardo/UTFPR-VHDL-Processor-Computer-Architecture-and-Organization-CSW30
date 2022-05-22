@@ -54,3 +54,11 @@ end architecture;
 -- JMPS 20: 1111_0000010100
 -- MOV R3 R5: 0011_011_101_000000
 -- JMPS terceira-instrucao: 1111_0000000011
+
+
+
+-- JMPA 1110_0_001_000
+-- JMPA opcode_selectAlu_reg
+-- Colocar bits pro delta
+
+-- Usar dois flip flop para dizer se faz carry ou não no top level, se for ula altera os flip flop, quando é condicional ve os flip flop

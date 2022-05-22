@@ -136,7 +136,7 @@ begin
 
     select_add_sub_source <= instruction_reg(9); -- select do add e sub, para saber se ira pegar de um registrador ou constante (add ou addi)
     
-    top_level <= "0000000" & instruction_reg(6 downto 0) when opcode = opcode_add or opcode = opcode_sub else -- Resto do add é a constante da operação executada
+    top_level <= "00000000" & instruction_reg(5 downto 0) when opcode = opcode_add or opcode = opcode_sub else -- Resto do add é a constante da operação executada
                    "00000000000000";
     
     -- procurando qual o registrador b sera usado para a operacao
