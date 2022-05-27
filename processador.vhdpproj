@@ -1,6 +1,7 @@
 ﻿<Project>
   <ItemGroup>
     <File Include="alu.vhd" />
+    <File Include="alu_tb.vcd" />
     <File Include="alu_tb.vhd" />
     <File Include="processor.vhd" />
     <File Include="processor_tb.vcd" />
@@ -21,6 +22,6 @@
     <File Include="uc_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>uc.vhd</HardwareStartPath>
+    <HardwareStartPath>alu.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>

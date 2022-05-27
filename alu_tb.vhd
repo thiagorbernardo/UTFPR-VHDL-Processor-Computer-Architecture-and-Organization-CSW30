@@ -12,11 +12,15 @@ architecture a_alu_tb of alu_tb is
             x         : IN unsigned (13 downto 0);
             y         : IN unsigned (13 downto 0);
             select_op : IN unsigned (2 downto 0);
-            output    : OUT unsigned (13 downto 0)
+            output    : OUT unsigned (13 downto 0);
+            carry : OUT std_logic;
+            zero : OUT std_logic
+            
         );
     end component;
     signal x, y, output: unsigned(13 downto 0);
     signal select_op: unsigned(2 downto 0);
+    signal zero, carry: std_logic;
 
 begin
     uut: alu
@@ -25,7 +29,9 @@ begin
         x         => x,
         y         => y,
         select_op => select_op,
-        output    => output
+        output    => output,
+        carry => carry,
+        zero => zero
     );
 
 
@@ -58,9 +64,14 @@ begin
         select_op <= "110"; --IS ODD
         x <= "00000010000001";
         wait for 50 ns;
-        select_op <= "111"; -- GREATER OR EQUAL
-        x <= "00000010000001";
-        y <= "11111101111101";
+        x <= "00000000000001";
+        y <= "00000000000001";
+        wait for 50 ns;
+        x <= "00000000000010";
+        y <= "00000000000001";
+        wait for 50 ns;
+        x <= "00000000000010";
+        y <= "00000000000011";
         wait for 50 ns;
         wait;
     end process;
