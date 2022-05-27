@@ -46,7 +46,9 @@ architecture a_processor of processor is
             x         : IN unsigned (13 downto 0);
             y         : IN unsigned (13 downto 0);
             select_op : IN unsigned (2 downto 0);
-            output    : OUT unsigned (13 downto 0)
+            output    : OUT unsigned (13 downto 0);
+            carry     : OUT std_logic;
+            zero      : OUT std_logic
         );
     end component;
 
@@ -66,6 +68,7 @@ architecture a_processor of processor is
     end component;
 
     signal alu_x, alu_y, alu_out, proc_regA, proc_regB : unsigned(13 downto 0);
+    signal zero, carry : std_logic;
 
     signal reg_bank_wr_en, sel_in_alu : std_logic;
     signal sel_write_reg, sel_reg_a, sel_reg_b, select_op : unsigned(2 downto 0);
@@ -116,7 +119,9 @@ begin
         x => alu_x,
         y => alu_y,
         select_op => select_op,
-        output => alu_out
+        output => alu_out,
+        carry => carry,
+        zero => zero
     );
     
     regs: reg_bank
