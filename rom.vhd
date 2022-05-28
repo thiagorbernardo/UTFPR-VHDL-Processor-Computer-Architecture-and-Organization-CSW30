@@ -35,3 +35,21 @@ begin
         end if;
     end process;
 end architecture;
+
+
+-- Instruções Assembly:
+
+-- ADD R3 0 
+-- ADD R4 0
+-- MOV R2 R3
+-- ADD R3 R4
+-- MOV R4 R3
+-- MOV R3 R2
+-- ADD R3 1
+-- MOV R2 R3
+-- SUB R3 30
+-- MOV R3 R2
+-- JMPR 01 8
+-- MOV R5 R4
+
+
