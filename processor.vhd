@@ -67,10 +67,11 @@ architecture a_processor of processor is
         );
     end component;
 
-    signal alu_x, alu_y, alu_out, proc_regA, proc_regB : unsigned(13 downto 0);
-    signal zero, carry : std_logic;
+    signal zero, carry : std_logic; -- flag real -> somente atualizada em operacoes de ula (add, sub)
+    signal zero_internal, carry_internal : std_logic; -- saida da ula indicando carry e zero
+    signal alu_x, alu_y, alu_out, proc_regA, proc_regB : unsigned(13 downto 0); -- portas da ula
 
-    signal reg_bank_wr_en, sel_in_alu : std_logic;
+    signal reg_bank_wr_en, sel_in_alu : std_logic; -- enable para saber se vai escrever no banco, seletor de operacao da ula
     signal sel_write_reg, sel_reg_a, sel_reg_b, select_op : unsigned(2 downto 0);
 
     signal instruction_address : unsigned(9 downto 0); -- ROM input
@@ -80,10 +81,11 @@ architecture a_processor of processor is
     signal state_internal : unsigned(1 downto 0); -- estado da maquina de estados
     signal fetch, execute, decode : std_logic; -- booleano que indica qual estado esta a maquina de estados
 
-    signal instruction_reg : unsigned(13 downto 0);
+    signal instruction_reg : unsigned(13 downto 0); -- registrador que guarda a intrucao usada
     signal opcode : unsigned(13 downto 10);
 
-    signal select_add_sub_source : std_logic;
+    signal select_add_sub_source : std_logic; -- flag que indica se a operacao usa registrador ou constante
+    signal select_compare : unsigned(1 downto 0); -- 2 bits para indicar qual a comparacao
     signal top_level : unsigned(13 downto 0);
 
 
@@ -92,6 +94,8 @@ architecture a_processor of processor is
     constant opcode_sub : unsigned(3 downto 0) := "0010";
     constant opcode_move : unsigned(3 downto 0) := "0011";
     constant opcode_jump : unsigned(3 downto 0) := "1111";
+    constant opcode_jump_rel : unsigned(3 downto 0) := "1110";
+
 begin
     rom1: rom
     port map (
@@ -120,8 +124,8 @@ begin
         y => alu_y,
         select_op => select_op,
         output => alu_out,
-        carry => carry,
-        zero => zero
+        carry => carry_internal,
+        zero => zero_internal
     );
     
     regs: reg_bank
@@ -140,13 +144,15 @@ begin
     opcode <= instruction_reg(13 downto 10); -- opcode sao os 4 bits mais significativos da instrucao (MSB)
 
     select_add_sub_source <= instruction_reg(9); -- select do add e sub, para saber se ira pegar de um registrador ou constante (add ou addi)
+    select_compare <= instruction_reg(9 downto 8); -- select de comparacao, maior, etc
     
     top_level <= "00000000" & instruction_reg(5 downto 0) when opcode = opcode_add or opcode = opcode_sub else -- Resto do add é a constante da operação executada
-                   "00000000000000";
+                "000000" & instruction_reg(7 downto 0) when opcode = opcode_jump_rel else -- Delta do branch
+                "00000000000000";
     
     -- procurando qual o registrador b sera usado para a operacao
     sel_reg_b <= instruction_reg(6 downto 4) when opcode = opcode_move else
-                 instruction_reg(5 downto 3) when ((opcode = opcode_add or opcode = opcode_sub) and select_add_sub_source = '0') else
+    instruction_reg(5 downto 3) when ((opcode = opcode_add or opcode = opcode_sub) and select_add_sub_source = '0') else
                  "000";
 
     reg_bank_wr_en <= '1' when execute = '1' and (opcode = opcode_add or opcode = opcode_sub or opcode = opcode_move) else '0';
@@ -154,22 +160,26 @@ begin
     sel_in_alu <= '0' when (((opcode = opcode_add or opcode = opcode_sub) and select_add_sub_source = '0') or opcode = opcode_move) else '1';
 
     sel_write_reg <= instruction_reg(8 downto 6) when (opcode = opcode_add or opcode = opcode_sub) else
-                     instruction_reg(9 downto 7) when (opcode = opcode_move) else
-                     "000"; -- Sempre escreve no regA - no caso ira cair nessa condicao para jump e nop, ou seja, write enable estara em 0
+    instruction_reg(9 downto 7) when (opcode = opcode_move) else
+                     "000"; -- Sempre escreve no regA - no caso ira cair nessa condicao para jmps, jmpr e nop, ou seja, write enable estara em 0
     
     select_op <= "000" when opcode = opcode_add or opcode = opcode_move else
-              "001" when opcode = opcode_sub else
-              "000";
+                 "001" when opcode = opcode_sub else
+                 "111"; -- operacao de jump, nop e jmpr faz nada na ula
 
-    instruction_address <= PC_internal(9 downto 0); 
+    -- atualizar flags em operacao de ula -> fixado em sub, poderia ser no add tambem?
+    zero <= zero_internal when opcode = opcode_sub;
+    carry <= carry_internal when opcode = opcode_sub;
+
+    instruction_address <= PC_internal(9 downto 0) - top_level(9 downto 0) when opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0)
+else PC_internal(9 downto 0);
 
     -- se for move pegar o registrador 0 para fazer 0 + registrador
     alu_x <= "00000000000000" when opcode = opcode_move else proc_regA;
-
     alu_y <= proc_regB  when sel_in_alu = '0' else
-             top_level  when sel_in_alu = '1' else
+    top_level  when sel_in_alu = '1' else
              "00000000000000";
-    
+
     state <= state_internal;
     PC <= PC_internal;
     output <= alu_out;
@@ -177,3 +187,7 @@ begin
     reg_a_output <= proc_regA;
     reg_b_output <= proc_regB;
 end architecture a_processor;
+
+-- Operação de ula escreve nas flags de carry e zero
+-- Agt faz uma operação de jump condicional depois de um sub e olha as flags
+-- só atualiza flag se for conta de ula, ignorar jump etc
