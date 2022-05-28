@@ -22,6 +22,6 @@
     <File Include="uc_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>alu.vhd</HardwareStartPath>
+    <HardwareStartPath>processor.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>

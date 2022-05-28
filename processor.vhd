@@ -30,6 +30,8 @@ architecture a_processor of processor is
         (
             clk             : IN std_logic ;
             rst             : IN std_logic ;
+            jump_en         : IN std_logic ;
+            address         : IN unsigned (9 downto 0);
             instruction_in  : IN unsigned (13 downto 0);
             instruction_out : OUT unsigned (13 downto 0);
             PC              : OUT unsigned (13 downto 0);
@@ -77,6 +79,8 @@ architecture a_processor of processor is
     signal instruction_address : unsigned(9 downto 0); -- ROM input
     signal PC_internal : unsigned(13 downto 0); -- Resultado do PC
     signal rom_output : unsigned(13 downto 0); -- endereco da ROM
+    signal jump_address: unsigned(9 downto 0);
+    signal jump_en: STD_LOGIC;
 
     signal state_internal : unsigned(1 downto 0); -- estado da maquina de estados
     signal fetch, execute, decode : std_logic; -- booleano que indica qual estado esta a maquina de estados
@@ -109,6 +113,8 @@ begin
         clk => clk,
         rst => rst,
         instruction_in => rom_output,
+        address => jump_address,
+        jump_en => jump_en,
         instruction_out => instruction_reg,
         state => state_internal,
         fetch => fetch,
@@ -168,11 +174,14 @@ begin
                  "111"; -- operacao de jump, nop e jmpr faz nada na ula
 
     -- atualizar flags em operacao de ula -> fixado em sub, poderia ser no add tambem?
-    zero <= zero_internal when opcode = opcode_sub;
-    carry <= carry_internal when opcode = opcode_sub;
+    zero <= zero_internal when opcode = opcode_sub and execute = '1';
+    carry <= carry_internal when opcode = opcode_sub and execute = '1';
 
-    instruction_address <= PC_internal(9 downto 0) - top_level(9 downto 0) when opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0)
+    instruction_address <= PC_internal(9 downto 0) - top_level(9 downto 0) when opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0) and decode='1'
 else PC_internal(9 downto 0);
+    
+    jump_en <= '1' when opcode = opcode_jump OR (opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0)) else '0';
+    jump_address <= instruction_address when opcode = opcode_jump_rel else instruction_reg(9 downto 0);
 
     -- se for move pegar o registrador 0 para fazer 0 + registrador
     alu_x <= "00000000000000" when opcode = opcode_move else proc_regA;

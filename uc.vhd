@@ -6,6 +6,8 @@ entity uc is
     port(
         clk : IN  std_logic;
         rst : IN  std_logic;
+        jump_en: IN std_logic; -- booleano para dizer se esta em etapa de jump
+        address: IN unsigned (9 downto 0); -- endereco para jump
         instruction_in : IN unsigned (13 downto 0);
         instruction_out : OUT unsigned (13 downto 0);
         PC: OUT unsigned(13 downto 0);
@@ -39,7 +41,7 @@ architecture a_uc of uc is
     
     signal PC_reg_in, PC_reg_out : unsigned(13 downto 0); -- input e output do program counter
     signal opcode : unsigned(3 downto 0); -- opcode -> add, jump, nop, etc
-    signal PC_reg_wr_en, instruction_reg_wr_en, jump_en : std_logic; -- enables = permite escrever nos registradores ou fazer jump
+    signal PC_reg_wr_en, instruction_reg_wr_en: std_logic; -- enables = permite escrever nos registradores ou fazer jump
     -- middlware signal para saidas
     signal instruction_out_internal : unsigned(13 downto 0); -- estado da maquina de estados
     signal state_internal : unsigned(1 downto 0); -- estado da maquina de estados
@@ -84,13 +86,9 @@ begin
     -- dados da instrucao
     opcode <= instruction_out_internal(13 downto 10); -- opcode sao os 4 bits mais significativos da instrucao
 
-    -- TODO: fiquei na duvida se pegava o jump pela ROM fazendo (13 downto 10), existe variavel global entre arquivos? arquivo de constantes talvez para graver opcodes
-    jump_en <= '1' when opcode = "1111" else '0';
-
     -- se for jump, concatenar MSB do PC com o LSB da instrucao
     -- se nao somar 1
-    PC_reg_in <= PC_reg_out(13 downto 10) & instruction_out_internal (9 downto 0) when jump_en = '1' else
-    PC_reg_out + 1;--"0000000000001";
+    PC_reg_in <= PC_reg_out(13 downto 10) & address when jump_en = '1' else PC_reg_out + 1;
 
     -- repassando para output
     PC <= PC_reg_out;
