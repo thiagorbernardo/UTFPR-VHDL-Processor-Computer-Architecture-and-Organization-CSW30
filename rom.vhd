@@ -49,7 +49,7 @@ end architecture;
 -- MOV R2,R3
 -- SUB R3,#30
 -- MOV R3,R2
--- JMPR cc_ULT,8
+-- JMPR cc_ULT,#8
 -- MOV R5,R4
 
 
