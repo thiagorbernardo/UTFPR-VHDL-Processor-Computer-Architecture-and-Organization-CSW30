@@ -23,7 +23,7 @@ architecture a_rom of rom is
         7 => B"0011_010_011_0000", -- MOV R2 <- R3 (salvar o valor de R3)
         8 => B"0010_1_011_011110", -- SUB R3 30
         9 => B"0011_011_010_0000", -- MOV R3 <- R2 (retornar o valor de R3)
-        10 => B"1110_01_00001000", -- JMPR < 8
+        10 => B"1110_01_00001000", -- JMPR - 8
         11 => B"0011_101_100_0000", -- MOV R5 <- R4
         others => (others => '0')
     );
@@ -39,17 +39,17 @@ end architecture;
 
 -- Instruções Assembly:
 
--- ADD R3 0 
--- ADD R4 0
--- MOV R2 R3
--- ADD R3 R4
--- MOV R4 R3
--- MOV R3 R2
--- ADD R3 1
--- MOV R2 R3
--- SUB R3 30
--- MOV R3 R2
--- JMPR 01 8
--- MOV R5 R4
+-- ADD R3, #0 
+-- ADD R4, #0
+-- MOV R2, R3
+-- ADD R3, R4
+-- MOV R4, R3
+-- MOV R3, R2
+-- ADD R3, #1
+-- MOV R2, R3
+-- SUB R3, #30
+-- MOV R3, R2
+-- JMPR cc_ULT, 8
+-- MOV R5, R4
 
 
