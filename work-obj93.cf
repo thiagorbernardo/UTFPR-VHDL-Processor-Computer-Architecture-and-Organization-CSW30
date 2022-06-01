@@ -1,22 +1,22 @@
 v 4
-file . "uc.vhd" "1c739091fa0befcf960d430ddc635d8665457e31" "20220528204230.411":
-  entity uc at 1( 0) + 0 on 1947;
-  architecture a_uc of uc at 21( 781) + 0 on 1948;
-file . "rom.vhd" "e0bb7c832deafe0e2c20fc5d31c5c5f7b9839ebe" "20220528204230.386":
-  entity rom at 1( 0) + 0 on 1939;
-  architecture a_rom of rom at 13( 227) + 0 on 1940;
-file . "state_machine.vhd" "4dbf1084b2b573764b4fe06aff873164fa72db3e" "20220528204230.399":
-  entity state_machine at 1( 0) + 0 on 1943;
-  architecture a_state_machine of state_machine at 13( 221) + 0 on 1944;
-file . "reg_bank_tb.vhd" "5e7feed6a75e963311409564695090d5a93243c8" "20220528204230.368":
-  entity reg_bank_tb at 1( 0) + 0 on 1933;
-  architecture a_reg_bank_tb of reg_bank_tb at 8( 98) + 0 on 1934;
-file . "processor.vhd" "dd030c906bd7dd39e47715a1ed37be4e7eebfbad" "20220528204230.345":
-  entity processor at 1( 0) + 0 on 1927;
-  architecture a_processor of processor at 18( 499) + 0 on 1928;
-file . "alu.vhd" "b820c320dd3d258bf4c1c91d5ae625c1f8531f10" "20220528204230.314":
-  entity alu at 1( 0) + 0 on 1923;
-  architecture a_alu of alu at 16( 343) + 0 on 1924;
+file . "uc.vhd" "1c739091fa0befcf960d430ddc635d8665457e31" "20220530203218.961":
+  entity uc at 1( 0) + 0 on 1975;
+  architecture a_uc of uc at 21( 781) + 0 on 1976;
+file . "rom.vhd" "3e10ee8e21161e256b5c1aac54db674f29d0642d" "20220530203218.938":
+  entity rom at 1( 0) + 0 on 1967;
+  architecture a_rom of rom at 13( 227) + 0 on 1968;
+file . "state_machine.vhd" "4dbf1084b2b573764b4fe06aff873164fa72db3e" "20220530203218.949":
+  entity state_machine at 1( 0) + 0 on 1971;
+  architecture a_state_machine of state_machine at 13( 221) + 0 on 1972;
+file . "reg_bank_tb.vhd" "5e7feed6a75e963311409564695090d5a93243c8" "20220530203218.920":
+  entity reg_bank_tb at 1( 0) + 0 on 1961;
+  architecture a_reg_bank_tb of reg_bank_tb at 8( 98) + 0 on 1962;
+file . "processor.vhd" "dd030c906bd7dd39e47715a1ed37be4e7eebfbad" "20220530203218.902":
+  entity processor at 1( 0) + 0 on 1955;
+  architecture a_processor of processor at 18( 499) + 0 on 1956;
+file . "alu.vhd" "b820c320dd3d258bf4c1c91d5ae625c1f8531f10" "20220530203218.882":
+  entity alu at 1( 0) + 0 on 1951;
+  architecture a_alu of alu at 16( 343) + 0 on 1952;
 file . "greater_or_equal_tb.vhd" "e083354dcf1c372413c0a590b3987341e5120c4e" "20220407001051.759":
   entity greater_or_equal_tb at 1( 0) + 0 on 29;
   architecture greater_or_equal_tb of greater_or_equal_tb at 8( 106) + 0 on 30;
@@ -29,27 +29,27 @@ file . "sum_and_sub.vhd" "9c1ef912f765209e717029b025126212d10ef0d6" "20220407000
 file . "greater_or_equal.vhd" "1b9c00ba0bdf5f8809f8754305c278c556756332" "20220407001051.751":
   entity greater_or_equal at 1( 0) + 0 on 27;
   architecture a_greater_or_equal of greater_or_equal at 12( 197) + 0 on 28;
-file . "alu_tb.vhd" "ad04a322412803a63f3c7f276894aec32611f0e8" "20220528204230.329":
-  entity alu_tb at 1( 0) + 0 on 1925;
-  architecture a_alu_tb of alu_tb at 8( 93) + 0 on 1926;
-file . "reg14bits.vhd" "52327b15fe2be67ca0610c1d2298c5e3af3dd0b4" "20220528204230.374":
-  entity reg14bits at 1( 0) + 0 on 1935;
-  architecture a_reg14bits of reg14bits at 15( 295) + 0 on 1936;
-file . "reg14bits_tb.vhd" "cd26ca7da68e8320e66d201969ca8ab5c97169f9" "20220528204230.380":
-  entity reg14bits_tb at 1( 0) + 0 on 1937;
-  architecture a_reg14bits_tb of reg14bits_tb at 8( 99) + 0 on 1938;
-file . "processor_tb.vhd" "f1002bf7d3b388c99bbe6ceaa8110ee6af7ae06e" "20220528204230.353":
-  entity processor_tb at 1( 0) + 0 on 1929;
-  architecture a_processor_tb of processor_tb at 8( 99) + 0 on 1930;
-file . "reg_bank.vhd" "0a8bdf32f58262e14827180dfeaa8fec2478a13b" "20220528204230.360":
-  entity reg_bank at 1( 0) + 0 on 1931;
-  architecture a_reg_bank of reg_bank at 14( 334) + 0 on 1932;
-file . "rom_tb.vhd" "6ae6d71d9b7b546dc81f212c82916859fb4c285b" "20220528204230.392":
-  entity rom_tb at 1( 0) + 0 on 1941;
-  architecture a_rom_tb of rom_tb at 8( 93) + 0 on 1942;
-file . "state_machine_tb.vhd" "71729df0ff372943c84c329fcc21c5913df9823d" "20220528204230.406":
-  entity state_machine_tb at 1( 0) + 0 on 1945;
-  architecture a_state_machine_tb of state_machine_tb at 8( 103) + 0 on 1946;
-file . "uc_tb.vhd" "255e7be0cded0122286a30764e0454054a487193" "20220528204230.417":
-  entity uc_tb at 1( 0) + 0 on 1949;
-  architecture a_uc_tb of uc_tb at 8( 92) + 0 on 1950;
+file . "alu_tb.vhd" "ad04a322412803a63f3c7f276894aec32611f0e8" "20220530203218.893":
+  entity alu_tb at 1( 0) + 0 on 1953;
+  architecture a_alu_tb of alu_tb at 8( 93) + 0 on 1954;
+file . "reg14bits.vhd" "52327b15fe2be67ca0610c1d2298c5e3af3dd0b4" "20220530203218.926":
+  entity reg14bits at 1( 0) + 0 on 1963;
+  architecture a_reg14bits of reg14bits at 15( 295) + 0 on 1964;
+file . "reg14bits_tb.vhd" "cd26ca7da68e8320e66d201969ca8ab5c97169f9" "20220530203218.932":
+  entity reg14bits_tb at 1( 0) + 0 on 1965;
+  architecture a_reg14bits_tb of reg14bits_tb at 8( 99) + 0 on 1966;
+file . "processor_tb.vhd" "f1002bf7d3b388c99bbe6ceaa8110ee6af7ae06e" "20220530203218.908":
+  entity processor_tb at 1( 0) + 0 on 1957;
+  architecture a_processor_tb of processor_tb at 8( 99) + 0 on 1958;
+file . "reg_bank.vhd" "0a8bdf32f58262e14827180dfeaa8fec2478a13b" "20220530203218.914":
+  entity reg_bank at 1( 0) + 0 on 1959;
+  architecture a_reg_bank of reg_bank at 14( 334) + 0 on 1960;
+file . "rom_tb.vhd" "6ae6d71d9b7b546dc81f212c82916859fb4c285b" "20220530203218.944":
+  entity rom_tb at 1( 0) + 0 on 1969;
+  architecture a_rom_tb of rom_tb at 8( 93) + 0 on 1970;
+file . "state_machine_tb.vhd" "71729df0ff372943c84c329fcc21c5913df9823d" "20220530203218.955":
+  entity state_machine_tb at 1( 0) + 0 on 1973;
+  architecture a_state_machine_tb of state_machine_tb at 8( 103) + 0 on 1974;
+file . "uc_tb.vhd" "255e7be0cded0122286a30764e0454054a487193" "20220530203218.967":
+  entity uc_tb at 1( 0) + 0 on 1977;
+  architecture a_uc_tb of uc_tb at 8( 92) + 0 on 1978;
