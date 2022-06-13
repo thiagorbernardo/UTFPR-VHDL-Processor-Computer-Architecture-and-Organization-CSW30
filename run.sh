@@ -12,6 +12,9 @@ ghdl -a reg_bank_tb.vhd
 ghdl -a reg14bits.vhd
 ghdl -a reg14bits_tb.vhd
 
+ghdl -a reg1bits.vhd
+ghdl -a reg1bits_tb.vhd
+
 ghdl -a rom.vhd
 ghdl -a rom_tb.vhd
 

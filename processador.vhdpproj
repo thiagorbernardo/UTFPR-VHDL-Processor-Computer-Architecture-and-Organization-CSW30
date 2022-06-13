@@ -9,6 +9,8 @@
     <File Include="reg14bits.vhd" />
     <File Include="reg14bits_tb.vcd" />
     <File Include="reg14bits_tb.vhd" />
+    <File Include="reg1bits.vhd" />
+    <File Include="reg1bits_tb.vhd" />
     <File Include="reg_bank.vhd" />
     <File Include="reg_bank_tb.vcd" />
     <File Include="reg_bank_tb.vhd" />
@@ -22,6 +24,6 @@
     <File Include="uc_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>processor.vhd</HardwareStartPath>
+    <HardwareStartPath>reg1bits.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>

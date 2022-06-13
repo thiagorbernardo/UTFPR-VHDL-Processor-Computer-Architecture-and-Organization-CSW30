@@ -68,8 +68,19 @@ architecture a_processor of processor is
             reg_b            : OUT unsigned (13 downto 0)
         );
     end component;
+    
+    component reg1bits is
+        port
+        (
+            clk      : IN std_logic ;
+            rst      : IN std_logic ;
+            wr_en    : IN std_logic ;
+            data_in  : IN std_logic ;
+            data_out : OUT std_logic
+        );
+    end component;
 
-    signal zero, carry : std_logic; -- flag real -> somente atualizada em operacoes de ula (add, sub)
+    signal zero, carry, wr_en_flags : std_logic; -- flag real -> somente atualizada em operacoes de ula (add, sub)
     signal zero_internal, carry_internal : std_logic; -- saida da ula indicando carry e zero
     signal alu_x, alu_y, alu_out, proc_regA, proc_regB : unsigned(13 downto 0); -- portas da ula
 
@@ -147,6 +158,27 @@ begin
         reg_b => proc_regB
     );
     
+    reg_carry: reg1bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_flags,
+        data_in  => carry_internal,
+        data_out => carry
+    );
+    
+    reg_zero: reg1bits
+    port map
+    (
+        clk      => clk,
+        rst      => rst,
+        wr_en    => wr_en_flags,
+        data_in  => zero_internal,
+        data_out => zero
+    );
+
+    
     opcode <= instruction_reg(13 downto 10); -- opcode sao os 4 bits mais significativos da instrucao (MSB)
 
     select_add_sub_source <= instruction_reg(9); -- select do add e sub, para saber se ira pegar de um registrador ou constante (add ou addi)
@@ -173,9 +205,8 @@ begin
                  "001" when opcode = opcode_sub else
                  "111"; -- operacao de jump, nop e jmpr faz nada na ula
 
-    -- atualizar flags em operacao de ula -> fixado em sub, poderia ser no add tambem?
-    zero <= zero_internal when opcode = opcode_sub and execute = '1';
-    carry <= carry_internal when opcode = opcode_sub and execute = '1'; -- Adicionar todas as funçoes da ULA
+    -- atualizar flags em operacao de ula
+    wr_en_flags <= '1' when execute = '1' and (opcode = opcode_add or opcode = opcode_sub) else '0';
     
     instruction_address <= PC_internal(9 downto 0) - top_level(9 downto 0) when opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0) and decode='1'
 else PC_internal(9 downto 0); -- Usar complemento de 2
