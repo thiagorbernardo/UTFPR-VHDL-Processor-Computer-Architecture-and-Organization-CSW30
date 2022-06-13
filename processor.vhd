@@ -80,7 +80,7 @@ architecture a_processor of processor is
         );
     end component;
 
-    signal zero, carry, wr_en_flags : std_logic; -- flag real -> somente atualizada em operacoes de ula (add, sub)
+    signal Z, C, wr_en_flags : std_logic; -- flag real -> somente atualizada em operacoes de ula (add, sub)
     signal zero_internal, carry_internal : std_logic; -- saida da ula indicando carry e zero
     signal alu_x, alu_y, alu_out, proc_regA, proc_regB : unsigned(13 downto 0); -- portas da ula
 
@@ -165,7 +165,7 @@ begin
         rst      => rst,
         wr_en    => wr_en_flags,
         data_in  => carry_internal,
-        data_out => carry
+        data_out => C
     );
     
     reg_zero: reg1bits
@@ -175,7 +175,7 @@ begin
         rst      => rst,
         wr_en    => wr_en_flags,
         data_in  => zero_internal,
-        data_out => zero
+        data_out => Z
     );
 
     
@@ -208,10 +208,10 @@ begin
     -- atualizar flags em operacao de ula
     wr_en_flags <= '1' when execute = '1' and (opcode = opcode_add or opcode = opcode_sub) else '0';
     
-    instruction_address <= PC_internal(9 downto 0) - top_level(9 downto 0) when opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0) and decode='1'
+    instruction_address <= PC_internal(9 downto 0) + (NOT(top_level(9 downto 0)) + 1) when opcode = opcode_jump_rel and Z = select_compare(1) and C = select_compare(0) and decode='1'
 else PC_internal(9 downto 0); -- Usar complemento de 2
     
-    jump_en <= '1' when opcode = opcode_jump OR (opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0)) else '0';
+    jump_en <= '1' when opcode = opcode_jump OR (opcode = opcode_jump_rel and Z = select_compare(1) and C = select_compare(0)) else '0';
     jump_address <= instruction_address when opcode = opcode_jump_rel else instruction_reg(9 downto 0);
 
     -- se for move pegar o registrador 0 para fazer 0 + registrador
