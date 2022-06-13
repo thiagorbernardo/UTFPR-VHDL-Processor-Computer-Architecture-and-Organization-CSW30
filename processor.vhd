@@ -175,10 +175,10 @@ begin
 
     -- atualizar flags em operacao de ula -> fixado em sub, poderia ser no add tambem?
     zero <= zero_internal when opcode = opcode_sub and execute = '1';
-    carry <= carry_internal when opcode = opcode_sub and execute = '1';
-
+    carry <= carry_internal when opcode = opcode_sub and execute = '1'; -- Adicionar todas as funçoes da ULA
+    
     instruction_address <= PC_internal(9 downto 0) - top_level(9 downto 0) when opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0) and decode='1'
-else PC_internal(9 downto 0);
+else PC_internal(9 downto 0); -- Usar complemento de 2
     
     jump_en <= '1' when opcode = opcode_jump OR (opcode = opcode_jump_rel and zero = select_compare(1) and carry = select_compare(0)) else '0';
     jump_address <= instruction_address when opcode = opcode_jump_rel else instruction_reg(9 downto 0);
