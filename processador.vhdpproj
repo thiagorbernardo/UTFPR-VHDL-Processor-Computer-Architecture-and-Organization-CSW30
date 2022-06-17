@@ -6,6 +6,8 @@
     <File Include="processor.vhd" />
     <File Include="processor_tb.vcd" />
     <File Include="processor_tb.vhd" />
+    <File Include="ram.vhd" />
+    <File Include="ram_tb.vhd" />
     <File Include="reg14bits.vhd" />
     <File Include="reg14bits_tb.vcd" />
     <File Include="reg14bits_tb.vhd" />
@@ -15,6 +17,7 @@
     <File Include="reg_bank_tb.vcd" />
     <File Include="reg_bank_tb.vhd" />
     <File Include="rom.vhd" />
+    <File Include="rom_tb.vcd" />
     <File Include="rom_tb.vhd" />
     <File Include="state_machine.vhd" />
     <File Include="state_machine_tb.vcd" />
@@ -24,6 +27,6 @@
     <File Include="uc_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>reg1bits.vhd</HardwareStartPath>
+    <HardwareStartPath>processor.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>

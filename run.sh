@@ -24,5 +24,8 @@ ghdl -a state_machine_tb.vhd
 ghdl -a uc.vhd
 ghdl -a uc_tb.vhd
 
+ghdl -a ram.vhd
+# ghdl -a ram_tb.vhd
+
 ghdl -r processor_tb --wave=processor_tb.ghw
 gtkwave processor_tb.ghw

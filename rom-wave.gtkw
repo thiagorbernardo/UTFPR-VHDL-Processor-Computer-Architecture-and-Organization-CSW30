@@ -1,25 +1,98 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Wed May  4 00:30:31 2022
+[*] Thu Jun 16 00:40:31 2022
 [*]
 [dumpfile] "/home/thiago.bernardo/Documents/utfpr/arqcomp/processador/rom_tb.ghw"
-[dumpfile_mtime] "Wed May  4 00:26:57 2022"
-[dumpfile_size] 2056
+[dumpfile_mtime] "Thu Jun 16 00:36:55 2022"
+[dumpfile_size] 11205
 [savefile] "/home/thiago.bernardo/Documents/utfpr/arqcomp/processador/rom-wave.gtkw"
 [timestart] 0
 [size] 1920 1016
-[pos] -89 -89
-*-28.000000 763000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -51 -51
+*-28.000000 424000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.rom_tb.
 [treeopen] top.rom_tb.uut.
+[treeopen] top.rom_tb.uut.rommmmm.
 [sst_width] 233
-[signals_width] 198
+[signals_width] 282
 [sst_expanded] 1
-[sst_vpaned_height] 289
-@22
+[sst_vpaned_height] 611
+@24
 #{top.rom_tb.address[6:0]} top.rom_tb.address[6] top.rom_tb.address[5] top.rom_tb.address[4] top.rom_tb.address[3] top.rom_tb.address[2] top.rom_tb.address[1] top.rom_tb.address[0]
-@23
+@c00022
+#{top.rom_tb.uut.data_in[9:0]} top.rom_tb.uut.data_in[9] top.rom_tb.uut.data_in[8] top.rom_tb.uut.data_in[7] top.rom_tb.uut.data_in[6] top.rom_tb.uut.data_in[5] top.rom_tb.uut.data_in[4] top.rom_tb.uut.data_in[3] top.rom_tb.uut.data_in[2] top.rom_tb.uut.data_in[1] top.rom_tb.uut.data_in[0]
+@28
+top.rom_tb.uut.data_in[9]
+top.rom_tb.uut.data_in[8]
+top.rom_tb.uut.data_in[7]
+top.rom_tb.uut.data_in[6]
+top.rom_tb.uut.data_in[5]
+top.rom_tb.uut.data_in[4]
+top.rom_tb.uut.data_in[3]
+top.rom_tb.uut.data_in[2]
+top.rom_tb.uut.data_in[1]
+top.rom_tb.uut.data_in[0]
+@1401200
+-group_end
+@c00024
+top.rom_tb.uut.address_int
+@28
+(0)top.rom_tb.uut.address_int
+(1)top.rom_tb.uut.address_int
+(2)top.rom_tb.uut.address_int
+(3)top.rom_tb.uut.address_int
+(4)top.rom_tb.uut.address_int
+(5)top.rom_tb.uut.address_int
+(6)top.rom_tb.uut.address_int
+(7)top.rom_tb.uut.address_int
+(8)top.rom_tb.uut.address_int
+(9)top.rom_tb.uut.address_int
+(10)top.rom_tb.uut.address_int
+(11)top.rom_tb.uut.address_int
+(12)top.rom_tb.uut.address_int
+(13)top.rom_tb.uut.address_int
+(14)top.rom_tb.uut.address_int
+(15)top.rom_tb.uut.address_int
+(16)top.rom_tb.uut.address_int
+(17)top.rom_tb.uut.address_int
+(18)top.rom_tb.uut.address_int
+(19)top.rom_tb.uut.address_int
+(20)top.rom_tb.uut.address_int
+(21)top.rom_tb.uut.address_int
+(22)top.rom_tb.uut.address_int
+(23)top.rom_tb.uut.address_int
+(24)top.rom_tb.uut.address_int
+(25)top.rom_tb.uut.address_int
+(26)top.rom_tb.uut.address_int
+(27)top.rom_tb.uut.address_int
+(28)top.rom_tb.uut.address_int
+(29)top.rom_tb.uut.address_int
+(30)top.rom_tb.uut.address_int
+(31)top.rom_tb.uut.address_int
+@1401200
+-group_end
+@800023
+#{top.rom_tb.uut.rommmmm[0][13:0]} top.rom_tb.uut.rommmmm[0][13] top.rom_tb.uut.rommmmm[0][12] top.rom_tb.uut.rommmmm[0][11] top.rom_tb.uut.rommmmm[0][10] top.rom_tb.uut.rommmmm[0][9] top.rom_tb.uut.rommmmm[0][8] top.rom_tb.uut.rommmmm[0][7] top.rom_tb.uut.rommmmm[0][6] top.rom_tb.uut.rommmmm[0][5] top.rom_tb.uut.rommmmm[0][4] top.rom_tb.uut.rommmmm[0][3] top.rom_tb.uut.rommmmm[0][2] top.rom_tb.uut.rommmmm[0][1] top.rom_tb.uut.rommmmm[0][0]
+@29
+top.rom_tb.uut.rommmmm[0][13]
+top.rom_tb.uut.rommmmm[0][12]
+top.rom_tb.uut.rommmmm[0][11]
+top.rom_tb.uut.rommmmm[0][10]
+top.rom_tb.uut.rommmmm[0][9]
+top.rom_tb.uut.rommmmm[0][8]
+top.rom_tb.uut.rommmmm[0][7]
+top.rom_tb.uut.rommmmm[0][6]
+top.rom_tb.uut.rommmmm[0][5]
+top.rom_tb.uut.rommmmm[0][4]
+top.rom_tb.uut.rommmmm[0][3]
+top.rom_tb.uut.rommmmm[0][2]
+top.rom_tb.uut.rommmmm[0][1]
+top.rom_tb.uut.rommmmm[0][0]
+@1001201
+-group_end
+@24
 #{top.rom_tb.data[13:0]} top.rom_tb.data[13] top.rom_tb.data[12] top.rom_tb.data[11] top.rom_tb.data[10] top.rom_tb.data[9] top.rom_tb.data[8] top.rom_tb.data[7] top.rom_tb.data[6] top.rom_tb.data[5] top.rom_tb.data[4] top.rom_tb.data[3] top.rom_tb.data[2] top.rom_tb.data[1] top.rom_tb.data[0]
+#{top.rom_tb.uut.data_out[13:0]} top.rom_tb.uut.data_out[13] top.rom_tb.uut.data_out[12] top.rom_tb.uut.data_out[11] top.rom_tb.uut.data_out[10] top.rom_tb.uut.data_out[9] top.rom_tb.uut.data_out[8] top.rom_tb.uut.data_out[7] top.rom_tb.uut.data_out[6] top.rom_tb.uut.data_out[5] top.rom_tb.uut.data_out[4] top.rom_tb.uut.data_out[3] top.rom_tb.uut.data_out[2] top.rom_tb.uut.data_out[1] top.rom_tb.uut.data_out[0]
 [pattern_trace] 1
 [pattern_trace] 0
