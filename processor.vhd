@@ -116,8 +116,7 @@ architecture a_processor of processor is
     
     signal wr_en_ram: std_logic;
     signal ram_in, ram_out: unsigned(13 downto 0);
-    -- signal ram_address: unsigned(5 downto 0);
-    constant ram_address: unsigned(5 downto 0) := "000000";
+    signal ram_address: unsigned(5 downto 0);
 
 
     constant opcode_nop : unsigned(3 downto 0) := "0000";
@@ -242,12 +241,12 @@ begin
     jump_address <= instruction_address when opcode = opcode_jump_rel else instruction_reg(9 downto 0);
 
     -- ram
-    -- ram_address <= "000000";
-    -- ram_address <= proc_regB(5 downto 0) when opcode = opcode_mov_read else
+    ram_address <= proc_regB(5 downto 0) when opcode = opcode_mov_read else "000000";
 
     -- se for move pegar o registrador 0 para fazer 0 + registrador
     alu_x <= "00000000000000" when opcode = opcode_mov else proc_regA;
-    alu_y <= proc_regB when sel_in_alu = '0' else
+    alu_y <= ram_out when (sel_in_alu = '0' and opcode = opcode_mov_read) else
+            proc_regB when sel_in_alu = '0' else
             top_level  when sel_in_alu = '1' else
             "00000000000000";
 

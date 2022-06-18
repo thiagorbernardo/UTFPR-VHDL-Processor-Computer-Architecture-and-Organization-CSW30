@@ -1,21 +1,22 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Fri Jun 17 23:19:22 2022
+[*] Fri Jun 17 23:57:14 2022
 [*]
 [dumpfile] "/home/thiago.bernardo/Documents/utfpr/arqcomp/processador/processor_tb.ghw"
-[dumpfile_mtime] "Fri Jun 17 23:15:49 2022"
-[dumpfile_size] 121135
+[dumpfile_mtime] "Fri Jun 17 23:39:21 2022"
+[dumpfile_size] 121131
 [savefile] "/home/thiago.bernardo/Documents/utfpr/arqcomp/processador/processor-wave.gtkw"
 [timestart] 0
 [size] 1920 1016
 [pos] -51 -51
-*-28.000000 950000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-28.000000 1067000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top.
 [treeopen] top.processor_tb.
 [treeopen] top.processor_tb.uut.
+[treeopen] top.processor_tb.uut.ram1.
 [treeopen] top.processor_tb.uut.regs.
 [treeopen] top.processor_tb.uut.rom1.
-[sst_width] 319
+[sst_width] 262
 [signals_width] 334
 [sst_expanded] 1
 [sst_vpaned_height] 611
@@ -36,9 +37,20 @@ top.processor_tb.clk
 #{top.processor_tb.uut.alu_x[13:0]} top.processor_tb.uut.alu_x[13] top.processor_tb.uut.alu_x[12] top.processor_tb.uut.alu_x[11] top.processor_tb.uut.alu_x[10] top.processor_tb.uut.alu_x[9] top.processor_tb.uut.alu_x[8] top.processor_tb.uut.alu_x[7] top.processor_tb.uut.alu_x[6] top.processor_tb.uut.alu_x[5] top.processor_tb.uut.alu_x[4] top.processor_tb.uut.alu_x[3] top.processor_tb.uut.alu_x[2] top.processor_tb.uut.alu_x[1] top.processor_tb.uut.alu_x[0]
 #{top.processor_tb.uut.alu_y[13:0]} top.processor_tb.uut.alu_y[13] top.processor_tb.uut.alu_y[12] top.processor_tb.uut.alu_y[11] top.processor_tb.uut.alu_y[10] top.processor_tb.uut.alu_y[9] top.processor_tb.uut.alu_y[8] top.processor_tb.uut.alu_y[7] top.processor_tb.uut.alu_y[6] top.processor_tb.uut.alu_y[5] top.processor_tb.uut.alu_y[4] top.processor_tb.uut.alu_y[3] top.processor_tb.uut.alu_y[2] top.processor_tb.uut.alu_y[1] top.processor_tb.uut.alu_y[0]
 #{top.processor_tb.uut.regs.write_data[13:0]} top.processor_tb.uut.regs.write_data[13] top.processor_tb.uut.regs.write_data[12] top.processor_tb.uut.regs.write_data[11] top.processor_tb.uut.regs.write_data[10] top.processor_tb.uut.regs.write_data[9] top.processor_tb.uut.regs.write_data[8] top.processor_tb.uut.regs.write_data[7] top.processor_tb.uut.regs.write_data[6] top.processor_tb.uut.regs.write_data[5] top.processor_tb.uut.regs.write_data[4] top.processor_tb.uut.regs.write_data[3] top.processor_tb.uut.regs.write_data[2] top.processor_tb.uut.regs.write_data[1] top.processor_tb.uut.regs.write_data[0]
+@29
+top.processor_tb.uut.reg_bank_wr_en
 @28
 #{top.processor_tb.uut.uc1.opcode[3:0]} top.processor_tb.uut.uc1.opcode[3] top.processor_tb.uut.uc1.opcode[2] top.processor_tb.uut.uc1.opcode[1] top.processor_tb.uut.uc1.opcode[0]
 #{top.processor_tb.uut.sel_write_reg[2:0]} top.processor_tb.uut.sel_write_reg[2] top.processor_tb.uut.sel_write_reg[1] top.processor_tb.uut.sel_write_reg[0]
+#{top.processor_tb.uut.regs.select_reg_a[2:0]} top.processor_tb.uut.regs.select_reg_a[2] top.processor_tb.uut.regs.select_reg_a[1] top.processor_tb.uut.regs.select_reg_a[0]
+@c00028
+#{top.processor_tb.uut.regs.select_reg_b[2:0]} top.processor_tb.uut.regs.select_reg_b[2] top.processor_tb.uut.regs.select_reg_b[1] top.processor_tb.uut.regs.select_reg_b[0]
+@28
+top.processor_tb.uut.regs.select_reg_b[2]
+top.processor_tb.uut.regs.select_reg_b[1]
+top.processor_tb.uut.regs.select_reg_b[0]
+@1401200
+-group_end
 @c00024
 #{top.processor_tb.uut.regs.data_out_reg_1[13:0]} top.processor_tb.uut.regs.data_out_reg_1[13] top.processor_tb.uut.regs.data_out_reg_1[12] top.processor_tb.uut.regs.data_out_reg_1[11] top.processor_tb.uut.regs.data_out_reg_1[10] top.processor_tb.uut.regs.data_out_reg_1[9] top.processor_tb.uut.regs.data_out_reg_1[8] top.processor_tb.uut.regs.data_out_reg_1[7] top.processor_tb.uut.regs.data_out_reg_1[6] top.processor_tb.uut.regs.data_out_reg_1[5] top.processor_tb.uut.regs.data_out_reg_1[4] top.processor_tb.uut.regs.data_out_reg_1[3] top.processor_tb.uut.regs.data_out_reg_1[2] top.processor_tb.uut.regs.data_out_reg_1[1] top.processor_tb.uut.regs.data_out_reg_1[0]
 @28
@@ -63,6 +75,8 @@ top.processor_tb.uut.regs.data_out_reg_1[0]
 #{top.processor_tb.uut.regs.data_out_reg_3[13:0]} top.processor_tb.uut.regs.data_out_reg_3[13] top.processor_tb.uut.regs.data_out_reg_3[12] top.processor_tb.uut.regs.data_out_reg_3[11] top.processor_tb.uut.regs.data_out_reg_3[10] top.processor_tb.uut.regs.data_out_reg_3[9] top.processor_tb.uut.regs.data_out_reg_3[8] top.processor_tb.uut.regs.data_out_reg_3[7] top.processor_tb.uut.regs.data_out_reg_3[6] top.processor_tb.uut.regs.data_out_reg_3[5] top.processor_tb.uut.regs.data_out_reg_3[4] top.processor_tb.uut.regs.data_out_reg_3[3] top.processor_tb.uut.regs.data_out_reg_3[2] top.processor_tb.uut.regs.data_out_reg_3[1] top.processor_tb.uut.regs.data_out_reg_3[0]
 #{top.processor_tb.uut.regs.data_out_reg_4[13:0]} top.processor_tb.uut.regs.data_out_reg_4[13] top.processor_tb.uut.regs.data_out_reg_4[12] top.processor_tb.uut.regs.data_out_reg_4[11] top.processor_tb.uut.regs.data_out_reg_4[10] top.processor_tb.uut.regs.data_out_reg_4[9] top.processor_tb.uut.regs.data_out_reg_4[8] top.processor_tb.uut.regs.data_out_reg_4[7] top.processor_tb.uut.regs.data_out_reg_4[6] top.processor_tb.uut.regs.data_out_reg_4[5] top.processor_tb.uut.regs.data_out_reg_4[4] top.processor_tb.uut.regs.data_out_reg_4[3] top.processor_tb.uut.regs.data_out_reg_4[2] top.processor_tb.uut.regs.data_out_reg_4[1] top.processor_tb.uut.regs.data_out_reg_4[0]
 #{top.processor_tb.uut.regs.data_out_reg_5[13:0]} top.processor_tb.uut.regs.data_out_reg_5[13] top.processor_tb.uut.regs.data_out_reg_5[12] top.processor_tb.uut.regs.data_out_reg_5[11] top.processor_tb.uut.regs.data_out_reg_5[10] top.processor_tb.uut.regs.data_out_reg_5[9] top.processor_tb.uut.regs.data_out_reg_5[8] top.processor_tb.uut.regs.data_out_reg_5[7] top.processor_tb.uut.regs.data_out_reg_5[6] top.processor_tb.uut.regs.data_out_reg_5[5] top.processor_tb.uut.regs.data_out_reg_5[4] top.processor_tb.uut.regs.data_out_reg_5[3] top.processor_tb.uut.regs.data_out_reg_5[2] top.processor_tb.uut.regs.data_out_reg_5[1] top.processor_tb.uut.regs.data_out_reg_5[0]
+#{top.processor_tb.uut.regs.data_out_reg_6[13:0]} top.processor_tb.uut.regs.data_out_reg_6[13] top.processor_tb.uut.regs.data_out_reg_6[12] top.processor_tb.uut.regs.data_out_reg_6[11] top.processor_tb.uut.regs.data_out_reg_6[10] top.processor_tb.uut.regs.data_out_reg_6[9] top.processor_tb.uut.regs.data_out_reg_6[8] top.processor_tb.uut.regs.data_out_reg_6[7] top.processor_tb.uut.regs.data_out_reg_6[6] top.processor_tb.uut.regs.data_out_reg_6[5] top.processor_tb.uut.regs.data_out_reg_6[4] top.processor_tb.uut.regs.data_out_reg_6[3] top.processor_tb.uut.regs.data_out_reg_6[2] top.processor_tb.uut.regs.data_out_reg_6[1] top.processor_tb.uut.regs.data_out_reg_6[0]
+#{top.processor_tb.uut.regs.data_out_reg_7[13:0]} top.processor_tb.uut.regs.data_out_reg_7[13] top.processor_tb.uut.regs.data_out_reg_7[12] top.processor_tb.uut.regs.data_out_reg_7[11] top.processor_tb.uut.regs.data_out_reg_7[10] top.processor_tb.uut.regs.data_out_reg_7[9] top.processor_tb.uut.regs.data_out_reg_7[8] top.processor_tb.uut.regs.data_out_reg_7[7] top.processor_tb.uut.regs.data_out_reg_7[6] top.processor_tb.uut.regs.data_out_reg_7[5] top.processor_tb.uut.regs.data_out_reg_7[4] top.processor_tb.uut.regs.data_out_reg_7[3] top.processor_tb.uut.regs.data_out_reg_7[2] top.processor_tb.uut.regs.data_out_reg_7[1] top.processor_tb.uut.regs.data_out_reg_7[0]
 #{top.processor_tb.state[1:0]} top.processor_tb.state[1] top.processor_tb.state[0]
 #{top.processor_tb.uut.select_compare[1:0]} top.processor_tb.uut.select_compare[1] top.processor_tb.uut.select_compare[0]
 top.processor_tb.uut.z
@@ -73,25 +87,8 @@ top.processor_tb.uut.uc1.jump_en
 @28
 #{top.processor_tb.uut.jump_address[9:0]} top.processor_tb.uut.jump_address[9] top.processor_tb.uut.jump_address[8] top.processor_tb.uut.jump_address[7] top.processor_tb.uut.jump_address[6] top.processor_tb.uut.jump_address[5] top.processor_tb.uut.jump_address[4] top.processor_tb.uut.jump_address[3] top.processor_tb.uut.jump_address[2] top.processor_tb.uut.jump_address[1] top.processor_tb.uut.jump_address[0]
 @24
-top.processor_tb.uut.rom1.address_int
-@c00025
-#{top.processor_tb.uut.rom1.data_out[13:0]} top.processor_tb.uut.rom1.data_out[13] top.processor_tb.uut.rom1.data_out[12] top.processor_tb.uut.rom1.data_out[11] top.processor_tb.uut.rom1.data_out[10] top.processor_tb.uut.rom1.data_out[9] top.processor_tb.uut.rom1.data_out[8] top.processor_tb.uut.rom1.data_out[7] top.processor_tb.uut.rom1.data_out[6] top.processor_tb.uut.rom1.data_out[5] top.processor_tb.uut.rom1.data_out[4] top.processor_tb.uut.rom1.data_out[3] top.processor_tb.uut.rom1.data_out[2] top.processor_tb.uut.rom1.data_out[1] top.processor_tb.uut.rom1.data_out[0]
-@29
-top.processor_tb.uut.rom1.data_out[13]
-top.processor_tb.uut.rom1.data_out[12]
-top.processor_tb.uut.rom1.data_out[11]
-top.processor_tb.uut.rom1.data_out[10]
-top.processor_tb.uut.rom1.data_out[9]
-top.processor_tb.uut.rom1.data_out[8]
-top.processor_tb.uut.rom1.data_out[7]
-top.processor_tb.uut.rom1.data_out[6]
-top.processor_tb.uut.rom1.data_out[5]
-top.processor_tb.uut.rom1.data_out[4]
-top.processor_tb.uut.rom1.data_out[3]
-top.processor_tb.uut.rom1.data_out[2]
-top.processor_tb.uut.rom1.data_out[1]
-top.processor_tb.uut.rom1.data_out[0]
-@1401201
--group_end
+#{top.processor_tb.uut.ram_address[5:0]} top.processor_tb.uut.ram_address[5] top.processor_tb.uut.ram_address[4] top.processor_tb.uut.ram_address[3] top.processor_tb.uut.ram_address[2] top.processor_tb.uut.ram_address[1] top.processor_tb.uut.ram_address[0]
+#{top.processor_tb.uut.ram_out[13:0]} top.processor_tb.uut.ram_out[13] top.processor_tb.uut.ram_out[12] top.processor_tb.uut.ram_out[11] top.processor_tb.uut.ram_out[10] top.processor_tb.uut.ram_out[9] top.processor_tb.uut.ram_out[8] top.processor_tb.uut.ram_out[7] top.processor_tb.uut.ram_out[6] top.processor_tb.uut.ram_out[5] top.processor_tb.uut.ram_out[4] top.processor_tb.uut.ram_out[3] top.processor_tb.uut.ram_out[2] top.processor_tb.uut.ram_out[1] top.processor_tb.uut.ram_out[0]
+#{top.processor_tb.uut.ram_in[13:0]} top.processor_tb.uut.ram_in[13] top.processor_tb.uut.ram_in[12] top.processor_tb.uut.ram_in[11] top.processor_tb.uut.ram_in[10] top.processor_tb.uut.ram_in[9] top.processor_tb.uut.ram_in[8] top.processor_tb.uut.ram_in[7] top.processor_tb.uut.ram_in[6] top.processor_tb.uut.ram_in[5] top.processor_tb.uut.ram_in[4] top.processor_tb.uut.ram_in[3] top.processor_tb.uut.ram_in[2] top.processor_tb.uut.ram_in[1] top.processor_tb.uut.ram_in[0]
 [pattern_trace] 1
 [pattern_trace] 0
