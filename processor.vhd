@@ -215,16 +215,16 @@ begin
                 "00000000000000";
     
     -- procurando qual o registrador b sera usado para a operacao
-    sel_reg_b <= instruction_reg(6 downto 4) when (opcode = opcode_mov or opcode = opcode_mov_read or opcode_mov_write) else
+    sel_reg_b <= instruction_reg(6 downto 4) when (opcode = opcode_mov or opcode = opcode_mov_read or opcode = opcode_mov_write) else
                 instruction_reg(5 downto 3) when ((opcode = opcode_add or opcode = opcode_sub) and select_add_sub_source = '0') else
                 "000";
 
     reg_bank_wr_en <= '1' when execute = '1' and (opcode = opcode_add or opcode = opcode_sub or opcode = opcode_mov or opcode = opcode_mov_read) else '0';
 
-    sel_in_alu <= '0' when (((opcode = opcode_add or opcode = opcode_sub) and select_add_sub_source = '0') or opcode = opcode_mov or opcode = opcode_mov_read or opcode_mov_write) else '1';
+    sel_in_alu <= '0' when (((opcode = opcode_add or opcode = opcode_sub) and select_add_sub_source = '0') or (opcode = opcode_mov or opcode = opcode_mov_read or opcode = opcode_mov_write)) else '1';
 
     sel_write_reg <= instruction_reg(8 downto 6) when (opcode = opcode_add or opcode = opcode_sub) else
-    instruction_reg(9 downto 7) when (opcode = opcode_mov or opcode = opcode_mov_read or opcode_mov_write) else
+    instruction_reg(9 downto 7) when (opcode = opcode_mov or opcode = opcode_mov_read or opcode = opcode_mov_write) else
                      "000"; -- Sempre escreve no regA - no caso ira cair nessa condicao para jmps, jmpr e nop, ou seja, write enable estara em 0
     
     select_op <= "000" when opcode = opcode_add or opcode = opcode_mov or opcode = opcode_mov_read else
@@ -241,13 +241,18 @@ begin
     jump_address <= instruction_address when opcode = opcode_jump_rel else instruction_reg(9 downto 0);
 
     -- ram
-    ram_address <= proc_regB(5 downto 0) when opcode = opcode_mov_read or opcode_mov_write else "000000";
-    wr_en_ram <= '1' when opcode = opcode_mov_write else '0';
-    ram_in <= proc_regA when wr_en_ram = '1' and opcode = opcode_mov_write;
+    ram_address <= proc_regB(5 downto 0) when opcode = opcode_mov_read else
+                proc_regA(5 downto 0) when opcode = opcode_mov_write else
+                "000000";
+    wr_en_ram <= '1' when execute = '1' and opcode = opcode_mov_write else '0';
+    ram_in <= proc_regB when opcode = opcode_mov_write else "00000000000000";
+
     -- se for move pegar o registrador 0 para fazer 0 + registrador
     alu_x <= "00000000000000" when opcode = opcode_mov else 
-             ram_in when opcode = opcode_mov_write else
+            ram_in when opcode = opcode_mov_write else
             proc_regA;
+
+    -- vai falhar aqui
     alu_y <= ram_out when (sel_in_alu = '0' and opcode = opcode_mov_read) else
             proc_regB when sel_in_alu = '0' else
             top_level  when sel_in_alu = '1' else
