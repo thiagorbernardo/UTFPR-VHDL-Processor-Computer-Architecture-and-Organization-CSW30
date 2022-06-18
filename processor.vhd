@@ -252,7 +252,6 @@ begin
             ram_in when opcode = opcode_mov_write else
             proc_regA;
 
-    -- vai falhar aqui
     alu_y <= ram_out when (sel_in_alu = '0' and opcode = opcode_mov_read) else
             proc_regB when sel_in_alu = '0' else
             top_level  when sel_in_alu = '1' else
