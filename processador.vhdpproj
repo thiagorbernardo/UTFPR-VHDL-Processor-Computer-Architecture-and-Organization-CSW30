@@ -17,7 +17,6 @@
     <File Include="reg_bank_tb.vcd" />
     <File Include="reg_bank_tb.vhd" />
     <File Include="rom.vhd" />
-    <File Include="rom_tb.vcd" />
     <File Include="rom_tb.vhd" />
     <File Include="state_machine.vhd" />
     <File Include="state_machine_tb.vcd" />
@@ -27,6 +26,6 @@
     <File Include="uc_tb.vhd" />
   </ItemGroup>
   <PropertyGroup>
-    <HardwareStartPath>processor.vhd</HardwareStartPath>
+    <HardwareStartPath>reg1bits.vhd</HardwareStartPath>
   </PropertyGroup>
 </Project>
