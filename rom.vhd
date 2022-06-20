@@ -11,7 +11,7 @@ entity rom is
 end entity rom;
 
 architecture a_rom of rom is
-    type mem is array (0 to 127) of unsigned(13 downto 0);
+    type mem is array (0 to 511) of unsigned(13 downto 0);
     signal address_int: integer;
     signal data_in: unsigned(9 downto 0);
     signal data_out: unsigned(13 downto 0);
