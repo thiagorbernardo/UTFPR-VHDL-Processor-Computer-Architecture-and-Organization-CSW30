@@ -29,7 +29,7 @@ architecture a_rom of rom is
         9 => B"0011_010_001_0000", -- MOV R2, R1
         10 => B"0010_1_001_100000", -- SUB R1 32
         11 => B"0011_001_010_0000", -- MOV R1, R2
-        12 => B"1110_01_00000110", -- JMPR - 6 
+        12 => B"1110_01_00000110", -- JMPR - 6
         13 => B"0011_001_000_0000", -- MOV R1,R0
         14 => B"0011_010_000_0000", -- MOV R2,R0
         15 => B"0001_1_001_000001", -- ADD R1,1
@@ -40,7 +40,7 @@ architecture a_rom of rom is
         20 => B"0001_0_111_001_000", -- ADD R7,R1
         21 => B"0011_010_111_0000", -- MOV R2,R7
         22 => B"0010_1_010_100001", -- SUB R2,33
-        23 => B"1110_01_00000100", -- JUMPREL 10,4
+        23 => B"1110_01_00000100", -- JUMPREL 01,4
         24 => B"0011_010_001_0000", -- MOV R2,R1
         25 => B"0010_1_010_000110", -- SUB R2,6
         26 => B"1110_01_00001010", -- JUMPREL 01,10
@@ -69,17 +69,38 @@ end architecture;
 
 -- Instruções Assembly:
 
--- ADD R3,#0
--- ADD R4,#0
--- MOV R2,R3
--- ADD R3,R4
--- MOV R4,R3
--- MOV R3,R2
--- ADD R3,#1
--- MOV R2,R3
--- SUB R3,#30
--- MOV R3,R2
--- JMPR cc_ULT,#8
--- MOV R5,R4
-
+-- MOV R7,R0
+-- MOV [R7],R0
+-- ADD R7,#1
+-- MOV [R7],R0
+-- MOV R1,R0
+-- ADD R1,#1
+-- ADD R1,#1
+-- MOV R7,R1
+-- MOV [R7],R1
+-- MOV R2,R1
+-- SUB R1,#32
+-- MOV R1,R2
+-- JMPR cc_ULT,#6
+-- MOV R1,R0
+-- MOV R2,R0
+-- ADD R1,#1
+-- ADD R1,#1
+-- MOV R7,R1
+-- ADD R7,R1
+-- MOV [R7],R0
+-- ADD R7,R1
+-- MOV R2,R7
+-- SUB R2,#33
+-- JMPR cc_ULT,#4
+-- MOV R2,R1
+-- SUB R2,#33
+-- JMPR cc_ULT,#10
+-- MOV R4,R0
+-- MOV R7,R0
+-- ADD R7,#1
+-- MOV R4,[R7]
+-- MOV R2,R7
+-- SUB R2,#32
+-- JMPR cc_ULT,#4
 
